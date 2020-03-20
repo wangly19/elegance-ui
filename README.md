@@ -1,24 +1,5 @@
-# eleganceui
+# Elegance-UI库简介
+随着公司项目的多元化，组件库成为了我们定制UI统一的需求，业余时间维护该组件库，不知道会不会加班。希望能能够注入更多的元素。
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## :fire:开始
+> 文档缓慢更新中
