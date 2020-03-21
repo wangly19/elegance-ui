@@ -1,6 +1,11 @@
 import Vue from 'vue'
+import '^/iconfont/alibaba.css'
+import '^/scss/global.d.scss'
+// import '^/scss/colors.scss'
 import GanIcon from '@/packages/GanIcon'
 import GanRow from '@/packages/GanRow'
+import GanCol from '@/packages/GanCol'
+import GanTag from '@/packages/GanTag'
 
 /**
  * 获取组件集合
@@ -8,7 +13,9 @@ import GanRow from '@/packages/GanRow'
  */
 const components: { [propsName: string]: any } = {
   GanIcon,
-  GanRow
+  GanRow,
+  GanCol,
+  GanTag
 }
 
 /**

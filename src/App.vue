@@ -1,6 +1,20 @@
 <template>
   <div id="app">
-    <gan-icon name="ic-move"></gan-icon>
+    <gan-icon name="icon-enterinto_fill"></gan-icon>
+    <gan-row>
+      <gan-col :span="6">
+        <div style="background: red;">1</div>
+      </gan-col>
+      <gan-col :span="6">
+        <gan-tag value="1112" type="success"/>
+      </gan-col>
+      <gan-col :span="6">
+        <div style="background: red;">3</div>
+      </gan-col>
+      <gan-col :span="6">
+        <div style="background: gray;">4</div>
+      </gan-col>
+    </gan-row>
   </div>
 </template>
 
@@ -12,12 +26,9 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 </style>
