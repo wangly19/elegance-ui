@@ -1,13 +1,18 @@
+@import './colors.scss';
+@import './mixins.scss';
 body {
   margin: 0;
   padding: 0;
 }
 
-@import './colors.scss';
-
 @each $key, $val in $colorMap {
   .g-bg-#{$key}{
     background-color: #{$val};
-    color: $light;
+  }
+}
+
+@each $key, $val in $colorMap {
+  .g-color-#{$key}{
+    color: #{$val};
   }
 }

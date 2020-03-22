@@ -15,6 +15,9 @@
         <div style="background: gray;">4</div>
       </gan-col>
     </gan-row>
+    <button @click="count+=10">++</button>
+    <button @click="count-=10">--</button>
+    <gan-progress :rote="count" type="error" :show-text="true" :in-line="false" :icon="false"/>
   </div>
 </template>
 
@@ -22,7 +25,9 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class App extends Vue {}
+export default class App extends Vue {
+  private count: number = 0
+}
 </script>
 
 <style lang="scss">
