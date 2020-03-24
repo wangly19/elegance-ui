@@ -1,0 +1,12 @@
+// .npmignore
+# 忽略目录
+test/
+src/
+public/
+docs/
+ 
+# 忽略指定文件
+vue.config.js
+babel.config.js
+*.map
+.editorconfig.js

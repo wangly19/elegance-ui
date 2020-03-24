@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import '^/iconfont/alibaba.css'
+import '^/scss/reset.css'
 import GanIcon from '@/packages/GanIcon'
 import GanRow from '@/packages/GanRow'
 import GanCol from '@/packages/GanCol'
 import GanTag from '@/packages/GanTag'
 import GanProgress from '@/packages/GanProgress'
+import GanCanlender from '@/packages/GanCanlender'
+import GanScrollView from '@/packages/GanScrollView'
+import GanTabs from '@/packages/GanTabs'
 
 /**
  * 获取组件集合
@@ -15,7 +19,10 @@ const components: { [propsName: string]: any } = {
   GanRow,
   GanCol,
   GanTag,
-  GanProgress
+  GanProgress,
+  GanCanlender,
+  GanScrollView,
+  GanTabs
 }
 
 /**
@@ -32,7 +39,6 @@ const install = (vue: typeof Vue): void => {
      * 注册组件
      * Register components
      */
-    console.log(key)
     vue.component(key, components[key])
   })
 }
