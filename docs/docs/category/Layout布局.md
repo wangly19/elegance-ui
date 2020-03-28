@@ -17,3 +17,19 @@ title: Layout布局
   </gan-col>
 </gan-row>
 ```
+::: demo
+```html
+<template>
+  <gan-icon name="icon-success"/>
+</template>
+<script>
+import GanIcon from '../src/packages/GanIcon/src/GanIcon.vue'
+export default {
+  data: () => ({ message: 'Hello World' }),
+  components: { GanIcon }
+}
+</script>
+<style>
+.box-vue { color: red; }
+</style>
+:::

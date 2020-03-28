@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import '^/iconfont/alibaba.css'
-import '^/scss/reset.css'
 import GanIcon from '@/packages/GanIcon'
 import GanRow from '@/packages/GanRow'
 import GanCol from '@/packages/GanCol'
@@ -11,6 +10,7 @@ import GanScrollView from '@/packages/GanScrollView'
 import GanTabs from '@/packages/GanTabs'
 import GMessages from '@/packages/GanMessage'
 import GanTooltip from '@/packages/GanTooltip'
+import GanPage from '@/packages/GanPage'
 
 /**
  * 获取组件集合
@@ -25,7 +25,8 @@ const components: { [propsName: string]: any } = {
   GanCanlender,
   GanScrollView,
   GanTabs,
-  GanTooltip
+  GanTooltip,
+  GanPage
 }
 
 /**

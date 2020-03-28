@@ -15,6 +15,7 @@
   },
   "creator": ">=2.0.0",
   "dependencies": {
+    "vuepress-plugin-demo-block": "^0.7.2",
     "vuepress-theme-antdocs": "^0.1.2-beta"
   }
 }

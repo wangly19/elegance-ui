@@ -25,10 +25,11 @@
         <li v-for="(item, index) in data" :key="index">{{item}}</li>
       </ul>
     </gan-scroll-view> -->
-    <!-- <gan-tabs></gan-tabs> -->
-    <gan-tooltip>
-      <span>1111</span>
-    </gan-tooltip>
+    <!-- <gan-tabs :data="tabData" @taggleClick="Tabclick">
+    </gan-tabs>
+    <gan-tooltip tooltip="测试文本" placement="top-left">
+    </gan-tooltip> -->
+    <gan-page></gan-page>
   </div>
 </template>
 
@@ -40,6 +41,14 @@ export default class App extends Vue {
   private count: number = 0
   private data: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   private page: number = 1
+  private tabData = [
+    { label: 1, value: '111' },
+    { label: 2, value: '222' }
+  ]
+
+  Tabclick(item: any, index: number) {
+    console.log(item, index)
+  }
 
   callback() {
     const promise = new Promise(resolve => {
@@ -56,7 +65,7 @@ export default class App extends Vue {
   mounted() {
     this.$message({
       type: 'primary',
-      time: NaN
+      time: 2000
     })
     console.log(this.$message)
   }
