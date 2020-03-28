@@ -9,6 +9,8 @@ import GanProgress from '@/packages/GanProgress'
 import GanCanlender from '@/packages/GanCanlender'
 import GanScrollView from '@/packages/GanScrollView'
 import GanTabs from '@/packages/GanTabs'
+import GMessages from '@/packages/GanMessage'
+import GanTooltip from '@/packages/GanTooltip'
 
 /**
  * 获取组件集合
@@ -22,7 +24,8 @@ const components: { [propsName: string]: any } = {
   GanProgress,
   GanCanlender,
   GanScrollView,
-  GanTabs
+  GanTabs,
+  GanTooltip
 }
 
 /**
@@ -41,6 +44,7 @@ const install = (vue: typeof Vue): void => {
      */
     vue.component(key, components[key])
   })
+  Vue.prototype.$message = GMessages
 }
 
 /**

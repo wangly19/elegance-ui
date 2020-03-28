@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import App from './App.vue'
-import EleganceUI from '@/packages'
+import App from '@/App.vue'
+import Elegance from '@/packages'
 
-Vue.use(EleganceUI)
-
+Vue.use(Elegance)
+Vue.prototype.$myProperty = '111'
 Vue.config.productionTip = false
 
 new Vue({

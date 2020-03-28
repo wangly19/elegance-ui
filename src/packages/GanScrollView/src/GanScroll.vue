@@ -25,10 +25,8 @@ export default class GanScrollView extends Vue {
   callback() {}
 
   touchScroll(event: Event) {
-    console.log()
     const target: any = event.target
     const { scrollStart } = this
-    console.log(target.scrollTop, scrollStart.clientHeight, target.scrollHeight)
     target.scrollTop + 1 + scrollStart.clientHeight >= target.scrollHeight && this.callback()
   }
 }

@@ -8,4 +8,4 @@ declare const _default: {
 
 export default _default;
 export * from './gan-row'
-
+export * from './gan-col'

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <gan-icon name="icon-enterinto_fill"></gan-icon>
     <!-- <gan-icon name="icon-enterinto_fill"></gan-icon>
     <gan-row>
       <gan-col :span="6">
@@ -24,7 +25,10 @@
         <li v-for="(item, index) in data" :key="index">{{item}}</li>
       </ul>
     </gan-scroll-view> -->
-    <gan-tabs></gan-tabs>
+    <!-- <gan-tabs></gan-tabs> -->
+    <gan-tooltip>
+      <span>1111</span>
+    </gan-tooltip>
   </div>
 </template>
 
@@ -38,7 +42,6 @@ export default class App extends Vue {
   private page: number = 1
 
   callback() {
-    console.log('count')
     const promise = new Promise(resolve => {
       setTimeout(() => {
         this.page += 1
@@ -49,6 +52,14 @@ export default class App extends Vue {
       resolve()
     })
   }
+
+  mounted() {
+    this.$message({
+      type: 'primary',
+      time: NaN
+    })
+    console.log(this.$message)
+  }
 }
 </script>
 
@@ -57,5 +68,9 @@ export default class App extends Vue {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+#app{
+  margin-top: 100px;
+  margin-left: 100px;
 }
 </style>
