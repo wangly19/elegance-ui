@@ -11,6 +11,7 @@ import GanTabs from '@/packages/GanTabs'
 import GMessages from '@/packages/GanMessage'
 import GanTooltip from '@/packages/GanTooltip'
 import GanPage from '@/packages/GanPage'
+import GanButton from '@/packages/GanButton'
 
 /**
  * 获取组件集合
@@ -26,7 +27,8 @@ const components: { [propsName: string]: any } = {
   GanScrollView,
   GanTabs,
   GanTooltip,
-  GanPage
+  GanPage,
+  GanButton
 }
 
 /**

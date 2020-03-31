@@ -29,7 +29,8 @@
     </gan-tabs>
     <gan-tooltip tooltip="测试文本" placement="top-left">
     </gan-tooltip> -->
-    <gan-page></gan-page>
+    <!-- <gan-page></gan-page> -->
+    <gan-button></gan-button>
   </div>
 </template>
 
