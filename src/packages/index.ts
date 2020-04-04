@@ -14,6 +14,11 @@ import GanPage from '@/packages/GanPage'
 import GanButton from '@/packages/GanButton'
 
 /**
+ * 引入指令
+ */
+import '@/packages/GanLoading'
+
+/**
  * 获取组件集合
  * Get a collection of components
  */
@@ -55,7 +60,18 @@ const install = (vue: typeof Vue): void => {
  * exports components install object
  */
 export default {
+  version: '0.1.4 developer',
   install,
   // 展开组件
-  ...components
+  GanIcon,
+  GanRow,
+  GanCol,
+  GanTag,
+  GanProgress,
+  GanCanlender,
+  GanScrollView,
+  GanTabs,
+  GanTooltip,
+  GanPage,
+  GanButton
 }

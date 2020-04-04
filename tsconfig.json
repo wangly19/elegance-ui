@@ -32,7 +32,6 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "types/index.d.ts",
     "types/vue.d.ts"
   ],
   "exclude": [

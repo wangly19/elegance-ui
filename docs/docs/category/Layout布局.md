@@ -1,35 +1,27 @@
 ---
 title: Layout布局
 ---
+# Layout布局
 
-## Layout布局
-
-和其他UI一样，分成24等份，你可以快速的对内容进行构造。
-
-### 基础布局
-
-单纯的行布局
-
-```vue
-<gan-row>
-  <gan-col :span="12">
-    <div></div>
-  </gan-col>
-</gan-row>
-```
 ::: demo
 ```html
 <template>
-  <gan-icon name="icon-success"/>
+  <div>
+    <el-row>
+    <GanButton data-type="error" :loading="false" :disabled="false" radius size="medium">11</GanButton>
+      </el-row>
+  </div>
 </template>
 <script>
-import GanIcon from '../src/packages/GanIcon/src/GanIcon.vue'
 export default {
   data: () => ({ message: 'Hello World' }),
-  components: { GanIcon }
+  created() {
+    console.log(this)
+  }
 }
 </script>
 <style>
 .box-vue { color: red; }
 </style>
+```
 :::

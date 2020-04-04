@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from '@/App.vue'
 import Elegance from '@/packages'
+console.log(Elegance)
 
 Vue.use(Elegance)
 Vue.prototype.$myProperty = '111'

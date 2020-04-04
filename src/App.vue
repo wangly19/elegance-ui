@@ -30,7 +30,9 @@
     <gan-tooltip tooltip="测试文本" placement="top-left">
     </gan-tooltip> -->
     <!-- <gan-page></gan-page> -->
-    <gan-button></gan-button>
+    <gan-button data-type="error" :loading="false" :disabled="false" radius size="medium">11</gan-button>
+    <gan-button data-type="error" :loading="false" :disabled="false" radius @click="openMessage">11</gan-button>
+    <gan-button data-type="error" :loading="false" :disabled="false" radius size="small" icon="icon-success">11</gan-button>
   </div>
 </template>
 
@@ -63,6 +65,13 @@ export default class App extends Vue {
     })
   }
 
+  openMessage() {
+    this.$message({
+      type: 'primary',
+      time: 2000
+    })
+  }
+
   mounted() {
     this.$message({
       type: 'primary',
@@ -82,5 +91,7 @@ export default class App extends Vue {
 #app{
   margin-top: 100px;
   margin-left: 100px;
+  display: flex;
+  align-items: center;
 }
 </style>

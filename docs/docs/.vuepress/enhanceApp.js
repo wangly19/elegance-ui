@@ -1,9 +1,12 @@
-import Elegance from '../../../lib/index.umd'
-import '../../../lib/index.css'
-
+import Vue from 'vue'
+import Elegance from 'elegance-ui/lib/index.umd.min.js'
+import 'elegance-ui/lib/index.css'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+ 
 export default ({
-  Vue
- }) => {
-  // ...做一些其他的应用级别的优化
-  Vue.use(Elegance)
- }
+ Vue,
+}) => {
+ Vue.use(Elegance)
+ Vue.use(Element)
+}

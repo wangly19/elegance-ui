@@ -4,6 +4,8 @@ test/
 src/
 public/
 docs/
+dist/
+elegance-ui-docs/
  
 # 忽略指定文件
 vue.config.js

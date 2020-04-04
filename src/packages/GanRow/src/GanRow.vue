@@ -14,7 +14,7 @@ export default class GanRow extends Vue {
    * col间距
    * @param { number } gutter 间距
    */
-  @Prop({ type: Number, required: false, default: 20 })
+  @Prop({ type: Number, required: false, default: 0 })
   private gutter!: number
 
   get space(): IGutter {
