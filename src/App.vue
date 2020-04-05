@@ -30,9 +30,11 @@
     <gan-tooltip tooltip="测试文本" placement="top-left">
     </gan-tooltip> -->
     <!-- <gan-page></gan-page> -->
-    <gan-button data-type="error" :loading="false" :disabled="false" radius size="medium">11</gan-button>
-    <gan-button data-type="error" :loading="false" :disabled="false" radius @click="openMessage">11</gan-button>
-    <gan-button data-type="error" :loading="false" :disabled="false" radius size="small" icon="icon-success">11</gan-button>
+    <gan-button-group>
+      <gan-button radius>1111</gan-button>
+      <gan-button radius>1111</gan-button>
+      <gan-button radius>1111</gan-button>
+    </gan-button-group>
   </div>
 </template>
 

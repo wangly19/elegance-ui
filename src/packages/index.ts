@@ -12,6 +12,7 @@ import GMessages from '@/packages/GanMessage'
 import GanTooltip from '@/packages/GanTooltip'
 import GanPage from '@/packages/GanPage'
 import GanButton from '@/packages/GanButton'
+import GanButtonGroup from '@/packages/GanButtoGroup'
 
 /**
  * 引入指令
@@ -33,7 +34,8 @@ const components: { [propsName: string]: any } = {
   GanTabs,
   GanTooltip,
   GanPage,
-  GanButton
+  GanButton,
+  GanButtonGroup
 }
 
 /**
@@ -73,5 +75,6 @@ export default {
   GanTabs,
   GanTooltip,
   GanPage,
-  GanButton
+  GanButton,
+  GanButtonGroup
 }

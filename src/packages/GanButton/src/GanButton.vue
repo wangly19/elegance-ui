@@ -47,6 +47,7 @@ export default class GanButton extends Vue {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border-radius: 2px;
     font-size: 16px;
     cursor: pointer;
     overflow: visible;
