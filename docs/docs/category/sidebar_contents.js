@@ -1,5 +1,6 @@
 module.exports = [
 	"/category/",
 	"Layout布局",
-	"article-2"
+	"Button按钮",
+	"Scroll滚动视图"
 ];

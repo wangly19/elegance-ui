@@ -4,7 +4,7 @@
   "description": "A VuePress project created by vuepress-creator.",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "dev": "vuepress dev docs ./ --no-cache",
     "build": "vuepress build docs"
   },
   "keywords": [],

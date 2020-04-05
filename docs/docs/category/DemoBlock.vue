@@ -6,15 +6,3 @@
   </div>
 </template>
 <script>
-export default {
-  props: {},
-  data() {
-    return {}
-  },
-  mounted() {},
-  methods: {},
-  computed: {}
-}
-</script>
-<style lang="scss" scoped>
-</style>
