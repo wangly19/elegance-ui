@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue, { Component } from 'vue'
 import '^/iconfont/alibaba.css'
 import GanIcon from '@/packages/GanIcon'
 import GanRow from '@/packages/GanRow'
@@ -11,8 +11,10 @@ import GanTabs from '@/packages/GanTabs'
 import GMessages from '@/packages/GanMessage'
 import GanTooltip from '@/packages/GanTooltip'
 import GanPage from '@/packages/GanPage'
+import GanOmit from '@/packages/GanOmit'
 import GanButton from '@/packages/GanButton'
 import GanButtonGroup from '@/packages/GanButtoGroup'
+import GanTable from '@/packages/GanTable'
 
 /**
  * 引入指令
@@ -23,7 +25,7 @@ import '@/packages/GanLoading'
  * 获取组件集合
  * Get a collection of components
  */
-const components: { [propsName: string]: any } = {
+const components = {
   GanIcon,
   GanRow,
   GanCol,
@@ -34,9 +36,12 @@ const components: { [propsName: string]: any } = {
   GanTabs,
   GanTooltip,
   GanPage,
+  GanOmit,
   GanButton,
-  GanButtonGroup
+  GanButtonGroup,
+  GanTable
 }
+const componentsName: { [propsName: string]: any } = { ...components }
 
 /**
  * 注册组件安装器
@@ -47,12 +52,12 @@ const install = (vue: typeof Vue): void => {
    * 判断组件是否为空
    * Determines whether the component is empty
    */
-  Object.keys(components).forEach(key => {
+  Object.keys(componentsName).forEach(key => {
     /**
      * 注册组件
      * Register components
      */
-    vue.component(key, components[key])
+    vue.component(key, componentsName[key])
   })
   Vue.prototype.$message = GMessages
 }
@@ -65,16 +70,5 @@ export default {
   version: '0.1.4 developer',
   install,
   // 展开组件
-  GanIcon,
-  GanRow,
-  GanCol,
-  GanTag,
-  GanProgress,
-  GanCanlender,
-  GanScrollView,
-  GanTabs,
-  GanTooltip,
-  GanPage,
-  GanButton,
-  GanButtonGroup
+  ...components
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <gan-icon name="icon-enterinto_fill"></gan-icon>
+    <!-- <gan-icon name="icon-enterinto_fill"></gan-icon> -->
     <!-- <gan-icon name="icon-enterinto_fill"></gan-icon>
     <gan-row>
       <gan-col :span="6">
@@ -30,11 +30,17 @@
     <gan-tooltip tooltip="测试文本" placement="top-left">
     </gan-tooltip> -->
     <!-- <gan-page></gan-page> -->
-    <gan-button-group>
+    <!-- <gan-button-group>
       <gan-button radius>1111</gan-button>
       <gan-button radius>1111</gan-button>
       <gan-button radius>1111</gan-button>
-    </gan-button-group>
+    </gan-button-group> -->
+    <!-- <gan-omit :row="4">11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</gan-omit> -->
+    <gan-table>
+      <template slot="action">
+        111
+      </template>
+    </gan-table>
   </div>
 </template>
 
