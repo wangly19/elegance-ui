@@ -4,13 +4,13 @@
       <!-- 标题区域 -->
       <thead>
         <tr>
-          <th v-for="item in column" :key="item.key" width="300"
+          <th v-for="item in column" :key="item.key" :width="item.wdith"
           :style="{textAlign: item.align}">{{item.value}}</th>
         </tr>
       </thead>
       <!-- body体 -->
       <tbody>
-        <tr v-for="(row, rowId) in datas" :key="rowId"
+        <tr v-for="(row, rowId) in data" :key="rowId"
         @click="handleRowClick(row)"
         @dblclick="handleDbRowClick(row)">
           <td v-for="(item, index) in filteTableRowData(row, column)" :key="index"
@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit } from 'vue-property-decorator'
+import { Component, Vue, Emit, Prop } from 'vue-property-decorator'
 
 /**
  * 配置接口
@@ -41,16 +41,14 @@ interface IColumn {
   name: 'GanTable'
 })
 export default class GanTable extends Vue {
-  private column: any = [
-    { key: 'name', value: '姓名' },
-    { key: 'age', value: '年龄', align: 'center' },
-    { key: 'sex', value: '性别', slot: 'action' }
-  ]
-
-  private datas = [
-    { name: 'wang', age: '19', sex: '男' },
-    { name: 'wang1', sex: '男', age: '20' }
-  ]
+  /**
+   * 配置列
+   */
+  @Prop({ default: [], required: true, type: Array }) column!: any[]
+  /**
+   * 数据队列
+   */
+  @Prop({ default: [], required: true, type: Array }) data!: any[]
 
   /**
    * 生成key数组
@@ -58,20 +56,22 @@ export default class GanTable extends Vue {
   filteTableRowData(row: any, column: any) {
     const result: any[] = []
     column.forEach((el: any, index: number) => {
-      console.log(el)
       result.push(row[el.key])
     })
     return result
   }
 
   /**
-   * 点击事件
+   * 点击row事件
    */
   @Emit('rowClick')
   handleRowClick(row: object) {
     return row
   }
 
+  /**
+   * 双击row事件
+   */
   @Emit('rowDbClick')
   handleDbRowClick(row: object) {
     return row

@@ -3,7 +3,7 @@
     <ul class="tab-list">
       <ol class="tab-list__item" v-for="(item, index) in data" :key="index" :class="bindClass(index)"
       @click.stop="activeTab(item, index)">
-        <span class="title">标题</span>
+        <span class="title">{{item.value}}</span>
       </ol>
     </ul>
   </div>
@@ -44,12 +44,13 @@ export default class GanTabs extends Vue {
       margin-bottom: 0;
       border-radius: 3px;
       min-width: 200px;
-      @include flex();
+      @include flex($justify: flex-start, $align: flex-start);
       &__item{
         text-align: center;
         line-height: 40px;
         min-width: 80px;
         cursor: pointer;
+        padding: 0;
         transition: background .7;
         &:hover{
           background: rgba(0, 0, 0, 0.1);

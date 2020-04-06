@@ -131,3 +131,53 @@ export default {
 </style>
 ```
 :::
+
+## 按钮的尺寸
+
+暂时的话我是只做了三个属性,但是只有两个你是可以选择的.分别是36px 32px 28px
+
+::: demo 在基础的按钮上添加 `size` 属性可以控制其按钮的尺寸大小
+```html {1}
+<template>
+  <div>
+      <gan-button size="medium">大</gan-button>
+      <gan-button>中</gan-button>
+      <gan-button size="small">小</gan-button>
+  </div>
+</template>
+<style>
+  .base {
+    margin-bottom: 20px;
+  }
+</style>
+```
+:::
+
+
+## 按钮组织
+
+在组件中,我们也提供了按钮组,来对按钮进行合理的约束,使得他们更加的规范.通过按钮组标签可以将其装饰成为一个整体.虽然在文档上你看起来是这样子的.
+
+::: demo 在基础的按钮上添加 `gan-button-group` 属性可以控制其加载的状态。
+```html {1}
+<template>
+  <div>
+    <gan-button-group class="base">
+      <gan-button>1111</gan-button>
+      <gan-button>1111</gan-button>
+      <gan-button>1111</gan-button>
+    </gan-button-group>
+    <gan-button-group class="base">
+      <gan-button radius>1111</gan-button>
+      <gan-button radius>1111</gan-button>
+      <gan-button radius>1111</gan-button>
+    </gan-button-group>
+  </div>
+</template>
+<style>
+  .base {
+    margin-bottom: 20px;
+  }
+</style>
+```
+:::
