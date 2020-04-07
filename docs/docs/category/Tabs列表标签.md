@@ -1,6 +1,7 @@
 ---
 title: Tabs列表标签
 ---
+# Tabs列表标签
 
 ## 基本用法
 
@@ -42,11 +43,24 @@ export default {
     ]
   }),
   methods: {
-    bindTaggleCallback(item, index) {
-      window.alert(index)
+    /*
+     * 这是一个比较好的写法。它本身返回了一个object: Itabs
+    */
+    bindTaggleCallback({ item, index }) {
+      console.log('tabsItem', item)
+      console.log('index', index)
     }
   }
 }
 </script>
 ```
 :::
+
+## 更多功能...
+
+## 参数列表
+
+| 字段          | 方式   | 示例                                | 解释                   |
+|-------------|------|-----------------------------------|----------------------|
+| data        | Prop | \[\{ label: 1, value: '标签一' \}\]  | 对象数组，Key是标识，Value是内容 |
+| taggleClick | Emit | @taggleClick="bindTaggleCallback" | 切换Labels的回调方法        |

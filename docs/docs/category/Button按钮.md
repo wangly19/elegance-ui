@@ -181,3 +181,16 @@ export default {
 </style>
 ```
 :::
+
+## 参数列表
+
+|            | 方式   | 示例                              | 解释                                           |
+|------------|------|---------------------------------|----------------------------------------------|
+| data\-type | Prop | data\-type="success"            | 按钮类型：primary，error，success，warning，link，text |
+| icon       | Prop | icon="icon\-success"            | 图标按钮                                         |
+| loading    | Prop | loading="true"  \|\| 默认值: false | 是否显示loading效果                                |
+| disabled   | Prop | disabled="true" \|\| 默认值：false  | 是否禁用按钮                                       |
+| shadow     | Prop | shadow                          | hover的阴影效果                                   |
+| size       | Prop | size="small"                    | 按钮的大小：medium大，small 小                        |
+| radius     | Prop | radius                          | 是否开启圆角                                       |
+| click      | Emit | @click="onClick"                | 按钮点击回调事件                                     |

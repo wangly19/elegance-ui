@@ -33,9 +33,9 @@ import { Component, Vue, Emit, Prop } from 'vue-property-decorator'
 interface IColumn {
   key: string
   value: string
-  aglin: string
-  width: string | number
-  [prop: string]: any
+  aglin?: string
+  width?: string | number
+  slot?: string
 }
 @Component({
   name: 'GanTable'
@@ -44,7 +44,7 @@ export default class GanTable extends Vue {
   /**
    * 配置列
    */
-  @Prop({ default: [], required: true, type: Array }) column!: any[]
+  @Prop({ default: [], required: true, type: Array }) IColumn!: any[]
   /**
    * 数据队列
    */
