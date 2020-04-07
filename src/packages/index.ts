@@ -15,6 +15,7 @@ import GanOmit from '@/packages/GanOmit'
 import GanButton from '@/packages/GanButton'
 import GanButtonGroup from '@/packages/GanButtoGroup'
 import GanTable from '@/packages/GanTable'
+import GanRadios from '@/packages/GanRadio'
 
 /**
  * 引入指令
@@ -39,7 +40,8 @@ const components = {
   GanOmit,
   GanButton,
   GanButtonGroup,
-  GanTable
+  GanTable,
+  ...GanRadios
 }
 const componentsName: { [propsName: string]: any } = { ...components }
 
@@ -59,7 +61,7 @@ const install = (vue: typeof Vue): void => {
      */
     vue.component(key, componentsName[key])
   })
-  Vue.prototype.$message = GMessages
+  vue.prototype.$message = GMessages
 }
 
 /**
@@ -67,8 +69,9 @@ const install = (vue: typeof Vue): void => {
  * exports components install object
  */
 export default {
-  version: '0.1.5 developer',
+  version: '0.1.6 developer',
   install,
+  GMessages,
   // 展开组件
   ...components
 }

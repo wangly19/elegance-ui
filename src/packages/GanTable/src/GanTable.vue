@@ -44,7 +44,7 @@ export default class GanTable extends Vue {
   /**
    * 配置列
    */
-  @Prop({ default: [], required: true, type: Array }) IColumn!: any[]
+  @Prop({ default: [], required: true, type: Array }) column!: any[]
   /**
    * 数据队列
    */

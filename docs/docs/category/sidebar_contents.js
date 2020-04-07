@@ -1,5 +1,6 @@
 module.exports = [
 	"/category/",
+	"Icon图标",
 	"Layout布局",
 	"Button按钮",
 	"Tabs列表标签",

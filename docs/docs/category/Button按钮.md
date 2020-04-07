@@ -184,7 +184,7 @@ export default {
 
 ## 参数列表
 
-|            | 方式   | 示例                              | 解释                                           |
+|     参数       | 方式   | 示例                              | 解释                                           |
 |------------|------|---------------------------------|----------------------------------------------|
 | data\-type | Prop | data\-type="success"            | 按钮类型：primary，error，success，warning，link，text |
 | icon       | Prop | icon="icon\-success"            | 图标按钮                                         |

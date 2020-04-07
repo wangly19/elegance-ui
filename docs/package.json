@@ -17,7 +17,7 @@
   },
   "creator": ">=2.0.0",
   "dependencies": {
-    "elegance-ui": "^0.1.5",
+    "elegance-ui": "^0.1.7",
     "element-ui": "^2.13.0",
     "highlight.js": "^9.18.1",
     "vue-highlight.js": "^3.1.0",

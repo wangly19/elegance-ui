@@ -3,7 +3,7 @@ title: Table表格
 ---
 # Table表格
 
-## 基本用法
+## 基本接口
 
 表格Column的格式看起来是这样的，如果您了解js，我想您应该知道 `key` `value`是必填的。它对应了你当前表格的结构
 ```js
@@ -17,19 +17,26 @@ interface IColumn interface IColumn {
 }
 ```
 
-:::demo 可以使用 `gan-tabs` 组件标签来添加一个切换的tabTitle, 且给它绑定一个带有 `label`, `value`的 `object[]`
+## 基本用法
+:::demo 可以使用 `gan-table` 组件标签来添加一个切换的tabTitle, 且给它绑定一个带有 `label`, `value`的 `object[]`
 ```html
 <template>
   <div>
-    <gan-tabs :data="tabData"/>
+    <gan-table :column="columnData" :data="tabData" />
   </div>
 </template>
 <script>
 export default {
   data: () => ({
+    columnData: [
+      { key: 'name', value: '标题' },
+      { key: 'age', value: '年龄' },
+      { key: 'sex', value: '性别' }
+    ],
     tabData: [
-      { label: 1, value: '标签一' },
-      { label: 2, value: '标签二' }
+      { name: '王某', age: 18, sex: '男性' },
+      { name: '张某', age: 19, sex: '男性' },
+      { name: '赵某', age: 18, sex: '女性' }
     ]
   })
 }

@@ -36,11 +36,15 @@
       <gan-button radius>1111</gan-button>
     </gan-button-group> -->
     <!-- <gan-omit :row="4">11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</gan-omit> -->
-    <gan-table>
+    <!-- <gan-table>
       <template slot="action">
         111
       </template>
-    </gan-table>
+    </gan-table> -->
+    <gan-radio-group :value="1" >
+      <gan-radio label="个人" :value="1"></gan-radio>
+      <gan-radio label="个人2" :value="2"></gan-radio>
+    </gan-radio-group>
   </div>
 </template>
 
@@ -52,13 +56,14 @@ export default class App extends Vue {
   private count: number = 0
   private data: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   private page: number = 1
+  private isActive: boolean = false
   private tabData = [
     { label: 1, value: '111' },
     { label: 2, value: '222' }
   ]
 
-  Tabclick(item: any, index: number) {
-    console.log(item, index)
+  Tabclick(data: object) {
+    console.log(data)
   }
 
   callback() {
