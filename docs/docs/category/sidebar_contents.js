@@ -3,6 +3,7 @@ module.exports = [
 	"Icon图标",
 	"Layout布局",
 	"Button按钮",
+	"GanRadio单选",
 	"Tabs列表标签",
 	"Table表格",
 	"Progress进度条",

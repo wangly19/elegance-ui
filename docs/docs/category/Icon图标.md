@@ -72,7 +72,6 @@ export default {
   }),
   methods: {
     copyIconCode() {
-      console.log(this.$message)
     }
   }
 }
