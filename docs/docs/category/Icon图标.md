@@ -13,7 +13,7 @@ title: Icon图标
 ## 基本用法
 
 :::demo `gan-scroll` 标签可以快速的对你的文档流进行包装穿透，生成一个长链表
-```html
+```html {2}
 <template>
   <ul class="icon-list">
     <li v-for="(item, index) in iconList" :key="index"

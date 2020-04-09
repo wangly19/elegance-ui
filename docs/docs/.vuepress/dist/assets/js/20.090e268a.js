@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{804:function(n,e,t){"use strict";t.r(e);var l=t(96),r=Object(l.a)({},(function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[t("gan-scroll-view",{attrs:{height:200}},[t("ul",n._l(50,(function(e){return t("li",{key:e},[n._v(n._s(e))])})),0)])],1)}),[],!1,null,null,null);e.default=r.exports}}]);

@@ -38,7 +38,7 @@ export default {
     <gan-progress :rote="40.34" type="text"/>
     <gan-progress :rote="60.82" type="link"/>
     <gan-progress :rote="80.09" type="warning"/>
-    <gan-progress :rote="100.15" type="success"/>
+    <gan-progress :rote="100" type="success"/>
   </div>
 </template>
 <script>
@@ -60,7 +60,7 @@ export default {
     <gan-progress :rote="40.34" type="text"/>
     <gan-progress :rote="60.82" type="link"/>
     <gan-progress :rote="80.09" type="warning"/>
-    <gan-progress :rote="100.15" type="success"/>
+    <gan-progress :rote="100" type="success"/>
   </div>
 </template>
 <script>

@@ -1,5 +1,11 @@
----
-title: 全屏组件预览
----
-title: '图片预览组件'
----
+# vuepress-plugin-vue-demo-example
+
+::: demo example description
+
+```html {2}
+<template>
+  <div>example code</div>
+</template>
+```
+
+:::
