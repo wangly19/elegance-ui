@@ -41,10 +41,19 @@
         111
       </template>
     </gan-table> -->
-    <gan-radio-group :value="1" >
+    <!-- <gan-radio-group :value="1" >
       <gan-radio label="个人" :value="1"></gan-radio>
       <gan-radio label="个人2" :value="2"></gan-radio>
-    </gan-radio-group>
+    </gan-radio-group> -->
+    <!-- <gan-link>普通链接</gan-link>
+    <gan-link type="primary">标题链接</gan-link>
+    <gan-link type="link">标题链接</gan-link>
+    <gan-link type="success">标题链接</gan-link>
+    <gan-link type="warning">标题链接</gan-link>
+    <gan-link type="error">标题链接</gan-link> -->
+    <gan-card>
+      111
+    </gan-card>
   </div>
 </template>
 
