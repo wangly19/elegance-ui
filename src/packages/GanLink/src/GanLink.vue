@@ -6,15 +6,19 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 })
 export default class GanLink extends Vue {
   @Prop({ default: 'text', type: String }) dataType!: string
+  @Prop({ default: '', required: false }) to!: string
   render(h: any) {
-    return h('a', {
+    const { dataType, to } = this
+    return h(`${to !== '' ? 'router-link' : 'a'}`, {
       class: [
         'g-link',
-        `g-color-${this.dataType}`
+        `g-color-${dataType}`
       ],
       on: {
         click: () => this.$emit('click')
-      }
+      },
+      to,
+      tag: 'a'
     }, this.$slots.default)
   }
 }
