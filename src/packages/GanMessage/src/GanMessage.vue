@@ -32,7 +32,6 @@ export default class GanMessage extends Vue {
    * 关闭Message, 并回调
    */
   closeMessage() {
-    console.log('click')
     this.isStart = !this.isStart
   }
 

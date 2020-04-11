@@ -1,8 +1,7 @@
 <template>
   <button v-loading="loading"
   :class="buttonBaseClass"
-  @click="handleClick"
-  @keyup.enter="$emit('keyup')">
+  @click="handleClick">
     <slot v-if="icon === ''"></slot>
     <gan-icon class="g-button__icon" :name="icon" v-else/>
   </button>

@@ -41,9 +41,10 @@
         111
       </template>
     </gan-table> -->
-    <!-- <gan-radio-group :value="1" >
+    <gan-radio-group :value="1" >
       <gan-radio label="个人" :value="1"></gan-radio>
       <gan-radio label="个人2" :value="2"></gan-radio>
+<<<<<<< HEAD
     </gan-radio-group> -->
     <!-- <gan-link>普通链接</gan-link>
     <gan-link data-type="primary">标题s链接</gan-link>
@@ -59,6 +60,9 @@
       <gan-check label="张飞" value="2"></gan-check>
       <gan-check label="关羽" value="3"></gan-check>
     </gan-check-group>
+=======
+    </gan-radio-group>
+>>>>>>> parent of f495a65... Fix: 修复keyup事件
   </div>
 </template>
 
