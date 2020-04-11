@@ -5,12 +5,12 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
   name: 'GanLink'
 })
 export default class GanLink extends Vue {
-  @Prop({ default: 'text', type: String }) type!: string
+  @Prop({ default: 'text', type: String }) dataType!: string
   render(h: any) {
     return h('a', {
       class: [
         'g-link',
-        `g-color-${this.type}`
+        `g-color-${this.dataType}`
       ],
       on: {
         click: () => this.$emit('click')
@@ -25,5 +25,6 @@ export default class GanLink extends Vue {
   // 初始化样式
   display: inline;
   text-decoration: none;
+  cursor: pointer;
 }
 </style>

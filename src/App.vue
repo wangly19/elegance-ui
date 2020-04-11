@@ -46,14 +46,19 @@
       <gan-radio label="个人2" :value="2"></gan-radio>
     </gan-radio-group> -->
     <!-- <gan-link>普通链接</gan-link>
-    <gan-link type="primary">标题链接</gan-link>
-    <gan-link type="link">标题链接</gan-link>
-    <gan-link type="success">标题链接</gan-link>
-    <gan-link type="warning">标题链接</gan-link>
-    <gan-link type="error">标题链接</gan-link> -->
-    <gan-card>
+    <gan-link data-type="primary">标题s链接</gan-link>
+    <gan-link data-type="link">标题链接</gan-link>
+    <gan-link data-type="success">标题链接</gan-link>
+    <gan-link data-type="warning">标题链接</gan-link>
+    <gan-link data-type="error">标题链接</gan-link> -->
+    <!-- <gan-card>
       111
-    </gan-card>
+    </gan-card> -->
+    <gan-check-group :value="[1, 2]">
+      <gan-check label="赵云" value="1"></gan-check>
+      <gan-check label="张飞" value="2"></gan-check>
+      <gan-check label="关羽" value="3"></gan-check>
+    </gan-check-group>
   </div>
 </template>
 
