@@ -60,7 +60,6 @@ typings/
 .env
 .idea
 .DS_Store
-dist
 lib
 es
 _site
