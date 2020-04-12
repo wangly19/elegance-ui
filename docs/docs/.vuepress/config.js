@@ -2,7 +2,7 @@ module.exports = {
   theme:"antdocs",
   title: "Elegance-UI Color UI",
   description: "A lightweight creator for VuePress project.",
-  base: "/",
+  base: "/docs/",
   head: [
     ["link",{ rel: "icon",href: "/assets/logo.png" }]
   ],
