@@ -10,7 +10,7 @@ title: Layout 布局
 使用单一分栏创建基础的栅格布局。
 
 :::demo 通过 row 和 col 组件，并通过 col 组件的 `span` 属性我们就可以自由地组合布局。
-```html
+```html {2}
 <template>
   <div>
     <gan-row>
@@ -75,7 +75,7 @@ title: Layout 布局
 ## 间距布局
 
 :::demo 在基础布局上，可以通过 `gutter` 属性给我们的组件添加一定的边距
-```html
+```html {2}
 <template>
   <div>
     <gan-row :gutter="20">
@@ -124,7 +124,7 @@ title: Layout 布局
 ## 偏移列
 
 :::demo 在基础布局上，可以通过 `offset` 属性给我们的组件偏移一定的栏数
-```html
+```html {2}
 <template>
   <div>
     <gan-row :gutter="20">

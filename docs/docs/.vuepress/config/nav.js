@@ -1,12 +1,12 @@
 module.exports = [
   // Nav 1
   {
-    text: "Home",
+    text: "首页",
     link: "/"
   },
   // Nav 2
   {
-    text: "Category",
+    text: "文档",
     link: "/category/"
   },
 ];

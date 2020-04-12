@@ -16,12 +16,9 @@ import GanButton from '@/packages/GanButton'
 import GanButtonGroup from '@/packages/GanButtoGroup'
 import GanTable from '@/packages/GanTable'
 import GanRadios from '@/packages/GanRadio'
-<<<<<<< HEAD
 import GanLink from '@/packages/GanLink'
 import GanCard from '@/packages/GanCard'
 import GanChecks from '@/packages/GanCheck'
-=======
->>>>>>> parent of f495a65... Fix: 修复keyup事件
 
 /**
  * 引入指令
@@ -47,12 +44,9 @@ const components = {
   GanButton,
   GanButtonGroup,
   GanTable,
-<<<<<<< HEAD
   GanCard,
   GanLink,
   ...GanChecks,
-=======
->>>>>>> parent of f495a65... Fix: 修复keyup事件
   ...GanRadios
 }
 const componentsName: { [propsName: string]: any } = { ...components }
