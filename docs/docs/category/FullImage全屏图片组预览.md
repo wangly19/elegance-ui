@@ -1,11 +1,8 @@
-# vuepress-plugin-vue-demo-example
+---
+title: 图片预览
+--- 
+# 图片预览
 
-::: demo example description
+这个是我最先开发出来的组件，后续也会做一个继承。慢慢的去除一些冗余的功能。
 
-```html {2}
-<template>
-  <div>example code</div>
-</template>
-```
-
-:::
+详情参考地址: https://github.com/wangly19/image-preview-full

@@ -121,3 +121,37 @@ export default {
 </style>
 ```
 :::
+
+## 粗体图标
+将图标的横线，能够让字体图标的线勾勒更加真实。
+
+:::demo `bold` 可以快速的将图标变为粗体
+```html {2}
+<template>
+  <gan-icon name="icon-success" bold />
+</template>
+<script>
+export default {
+}
+</script>
+<style lang="scss" scoped>
+</style>
+```
+:::
+
+## point小手
+当你需要对图标进行点击时，往往需要使用 `cursor`，当然，我们内置了
+
+:::demo `point` 可以快速的将图标变为粗体
+```html {2}
+<template>
+  <gan-icon name="icon-success" point />
+</template>
+<script>
+export default {
+}
+</script>
+<style lang="scss" scoped>
+</style>
+```
+:::

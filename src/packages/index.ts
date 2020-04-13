@@ -19,6 +19,7 @@ import GanRadios from '@/packages/GanRadio'
 import GanLink from '@/packages/GanLink'
 import GanCard from '@/packages/GanCard'
 import GanChecks from '@/packages/GanCheck'
+import GanInput from '@/packages/GanInput'
 
 /**
  * 引入指令
@@ -46,6 +47,7 @@ const components = {
   GanTable,
   GanCard,
   GanLink,
+  GanInput,
   ...GanChecks,
   ...GanRadios
 }

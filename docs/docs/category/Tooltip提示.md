@@ -13,19 +13,19 @@ title: Tooltip提示
 <template>
   <div>
     <div>
-      <gan-tooltip tooltip="测试文本" placement="top-left">上左</gan-tooltip>
-      <gan-tooltip tooltip="测试文本" placement="top-center">上中</gan-tooltip>
-      <gan-tooltip tooltip="测试文本" placement="top-right">上右</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="top-left" style="padding: 10px;">上左</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="top" style="padding: 10px;">上中</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="top-right" style="padding: 10px;">上右</gan-tooltip>
     </div>
     <div>
-      <gan-tooltip tooltip="测试文本" placement="left-left">下左</gan-tooltip>
-      <gan-tooltip tooltip="测试文本" placement="left-center">下中</gan-tooltip>
-      <gan-tooltip tooltip="测试文本" placement="left-right">下右</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="left" style="padding: 10px;">下左</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="left-center"></gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="right" style="padding: 10px;">下右</gan-tooltip>
     <div>
     </div>
-      <gan-tooltip tooltip="测试文本" placement="bottom-left">下左</gan-tooltip>
-      <gan-tooltip tooltip="测试文本" placement="bottom-center">下中</gan-tooltip>
-      <gan-tooltip tooltip="测试文本" placement="bottom-right">下右</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="bottom-left" style="padding: 10px;">下左</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="bottom" style="padding: 10px;">下中</gan-tooltip>
+      <gan-tooltip tooltip="测试文本" placement="bottom-right" style="padding: 10px;">下右</gan-tooltip>
     </div>
   </div>
 </template>

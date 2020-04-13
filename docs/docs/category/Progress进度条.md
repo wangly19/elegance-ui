@@ -120,12 +120,12 @@ export default {
 ```html {2}
 <template>
   <div>
-    <div>
-      <gan-progress :rote="20.12" :in-line="true" type="error"/>
-      <gan-progress :rote="40.34" :in-line="true" type="text"/>
-      <gan-progress :rote="60.82" :in-line="true" type="link"/>
-      <gan-progress :rote="80.09" :in-line="true" type="warning"/>
-      <gan-progress :rote="100" :in-line="true" type="success"/>
+    <div class="line">
+      <gan-progress :rote="20.12" :in-line="true" :icon="false" type="error"/>
+      <gan-progress :rote="40.34" :in-line="true" :icon="false" type="text"/>
+      <gan-progress :rote="60.82" :in-line="true" :icon="false" type="link"/>
+      <gan-progress :rote="80.09" :in-line="true" :icon="false" type="warning"/>
+      <gan-progress :rote="100" :in-line="true" :icon="false" type="success"/>
     </div>
   </div>
 </template>
@@ -133,6 +133,11 @@ export default {
 export default {
 }
 </script>
+<style>
+  .line > * {
+    padding-bottom: 10px;
+  }
+</style>
 ```
 :::
 

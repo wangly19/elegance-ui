@@ -51,7 +51,7 @@ export default class GanTag extends Vue {
     return [
       'g-tag',
       hit && 'g-tag-hit',
-      type && !hit && tagActive && `g-bg-${type}`,
+      type && !hit && tagActive && `g-bg-${type}` && 'g-color-light',
       `g-tag-${tagSize}`
     ]
   }
@@ -63,7 +63,7 @@ export default class GanTag extends Vue {
     switch (this.size) {
       case 'regulur': return ''
       case 'small': return 'small'
-      case 'big': return 'big'
+      case 'medium': return 'big'
     }
   }
 
@@ -91,7 +91,7 @@ export default class GanTag extends Vue {
     border: 1px solid $border-color-base;
   }
   &-small {
-    line-height: 24px;
+    line-height: 20px;
   }
   &-big {
     line-height: 40px;

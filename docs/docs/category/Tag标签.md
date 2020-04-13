@@ -8,16 +8,16 @@ title: Tag标签
 
 ## 基本格式链接
 
-:::demo 可以使用 `gan-link` 标签添加一组文本链接指向性， 通过 `data-type & dataType`指定链接类型
-```html
+:::demo 可以使用 `gan-tag` 标签创建一个基本的tag， 同时用 `value` 可以将值赋予给它
+```html {2}
 <template>
   <div>
-    <gan-link>普通链接</gan-link>
-    <gan-link data-type="primary">标题s链接</gan-link>
-    <gan-link data-type="link">标题链接</gan-link>
-    <gan-link data-type="success">标题链接</gan-link>
-    <gan-link data-type="warning">标题链接</gan-link>
-    <gan-link data-type="error">标题链接</gan-link>
+    <gan-tag value="基本用法"/>
+    <gan-tag type="success" value="基本用法"/>
+    <gan-tag type="error" value="基本用法"/>
+    <gan-tag type="warning" value="基本用法"/>
+    <gan-tag type="text" value="基本用法"/>
+    <gan-tag type="link" value="基本用法"/>
   </div>
 </template>
 <script>
@@ -26,4 +26,40 @@ export default {
 </script>
 ```
 :::
-1
+
+## 不同大小
+
+:::demo 可以使用 `size` 给tag设置大小
+```html {2}
+<template>
+  <div>
+    <gan-tag value="大" type="primary" size="medium"/>
+    <gan-tag type="中" value="基本用法"/>
+    <gan-tag value="小" type="primary" size="small"/>
+  </div>
+</template>
+<script>
+export default {
+}
+</script>
+```
+:::
+
+:::demo 可以使用 `hit` 属性给tag设置标签
+```html {2}
+<template>
+  <div>
+    <gan-tag value="基本用法"/>
+    <gan-tag type="success" :hit="true" value="基本用法"/>
+    <gan-tag type="error" :hit="true" value="基本用法"/>
+    <gan-tag type="warning" :hit="true" value="基本用法"/>
+    <gan-tag type="text" :hit="true" value="基本用法"/>
+    <gan-tag type="link" :hit="true" value="基本用法"/>
+  </div>
+</template>
+<script>
+export default {
+}
+</script>
+```
+:::
