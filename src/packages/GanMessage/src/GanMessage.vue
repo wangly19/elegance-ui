@@ -62,6 +62,7 @@ export default class GanMessage extends Vue {
   .g-message{
     border-radius: 2px;
     @include position($position: fixed, $top: 10px, $left: 50%);
+    z-index: 2000;
     transform: translate(-50%, 0);
     @include flex($align: center);
     padding: 15px 15px 15px 15px;

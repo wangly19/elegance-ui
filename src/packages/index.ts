@@ -69,7 +69,7 @@ const install = (vue: typeof Vue): void => {
      */
     vue.component(key, componentsName[key])
   })
-  vue.prototype.$message = GMessages
+  vue.prototype.$gmessage = GMessages
 }
 
 /**

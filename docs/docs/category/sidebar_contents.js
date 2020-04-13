@@ -4,6 +4,7 @@ module.exports = [
 	"Layout布局",
 	"Button按钮",
 	"Link链接",
+	"Input输入框",
 	"Tag标签",
 	"Card卡片",
 	"GanRadio单选",
@@ -11,6 +12,8 @@ module.exports = [
 	"Table表格",
 	"Progress进度条",
 	"Tooltip提示",
+	"Message通知",
+	"Loading加载指令",
 	"FullImage全屏图片组预览",
 	"Scroll滚动视图"
 ];

@@ -32,7 +32,7 @@ export default class GanInput extends Vue {
   // 前置图标
   @Prop({ required: false, type: String, default: '' }) beforeIcon!: string
   // 后置图标
-  @Prop({ required: false, type: String, default: 'icon-close' }) afterIcon!: string
+  @Prop({ required: false, type: String, default: '' }) afterIcon!: string
   @Prop({ required: false, type: String, default: '' }) placeholder!: string
   @Ref('input') inputRef!: any
 
@@ -51,7 +51,6 @@ export default class GanInput extends Vue {
    */
   @Emit('change')
   handleChange() {
-    console.log(this.bindValue)
     return this.bindValue
   }
 }
@@ -145,7 +144,6 @@ export default class GanInput extends Vue {
     padding: 10px;
     z-index: 1000;
     cursor: pointer;
-    background: red;
   }
 }
 </style>
