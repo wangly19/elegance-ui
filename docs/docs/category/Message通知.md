@@ -17,7 +17,7 @@ export default {
     openMessage() {
       this.$gmessage({
         type: 'success',
-        time: 20000,
+        time: 2000,
         message: '我是一条2000s通知信息'
       })
     }
@@ -49,7 +49,7 @@ export default {
     openMessage(type) {
       this.$gmessage({
         type: type,
-        time: 20000,
+        time: 2000,
         message: '我是一条2000s通知信息'
       })
     }
@@ -76,7 +76,7 @@ export default {
       this.$gmessage({
         type: 'success',
         time: NaN,
-        message: '我是一条2000s通知信息'
+        message: '我是一条永久通知信息'
       })
     }
   }

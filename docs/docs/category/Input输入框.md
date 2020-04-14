@@ -91,13 +91,13 @@ export default {
 <template>
   <div class="input-boxs">
     <div class="input-box">
+      <gan-input style="margin-bottom: 20px" placeholder="大" size="medium"></gan-input>
+    </div>
+    <div class="input-box">
       <gan-input style="margin-bottom: 20px" placeholder="正常"></gan-input>
     </div>
     <div class="input-box">
-      <gan-input style="margin-bottom: 20px" placeholder="大的"></gan-input>
-    </div>
-    <div class="input-box">
-      <gan-input style="margin-bottom: 20px" placeholder="小的" size="small"></gan-input>
+      <gan-input style="margin-bottom: 20px" placeholder="小" size="small"></gan-input>
     </div>
   </div>
 </template>
@@ -107,8 +107,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .input-boxs {
-    display: flex;
-    justify-content: center;
+    margin-left: 200px;
   }
 </style>
 ```
