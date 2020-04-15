@@ -2,7 +2,7 @@
   <button v-loading="loading"
   :class="buttonBaseClass"
   @click="handleClick">
-    <slot v-if="icon === ''"></slot>
+    <slot v-if="icon === ''"/>
     <gan-icon class="g-button__icon" :name="icon" v-else/>
   </button>
 </template>

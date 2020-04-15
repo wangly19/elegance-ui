@@ -32,6 +32,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  .input-boxs {
+    margin-left: 200px;
+  }
 </style>
 ```
 :::
@@ -50,6 +53,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  .input-boxs {
+    margin-left: 200px;
+  }
 </style>
 ```
 :::
@@ -106,9 +112,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .input-boxs {
-    margin-left: 200px;
-  }
 </style>
 ```
 :::
