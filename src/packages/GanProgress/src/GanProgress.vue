@@ -43,9 +43,12 @@ export default class GanProgress extends Vue {
    * 计算比率
    */
   get roteStyle() {
-    const { rote } = this
+    let { rote } = this
+    if (rote > 100) rote = 100
+    if (rote < 0) rote = 0
+    this.rote = rote
     return {
-      width: `${rote <= 100 && rote >= 0 && rote}%`
+      width: `${rote}%`
     }
   }
 

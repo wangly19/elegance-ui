@@ -72,7 +72,7 @@ export default class GanButton extends Vue {
       background-position: center;
       background-repeat: no-repeat;
       position: relative;
-      cursor: default;
+      cursor: default !important;
     }
     &[disabled] {
       opacity: 0.6;

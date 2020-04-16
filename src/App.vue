@@ -61,21 +61,22 @@
       <gan-check label="张飞" value="2"></gan-check>
       <gan-check label="关羽" value="3"></gan-check>
     </gan-check-group> -->
-    <div class="input-box">
-      <gan-input style="margin-bottom: 20px" close></gan-input>
-      <gan-input style="margin-bottom: 20px" before-text="https://"></gan-input>
-      <gan-input style="margin-bottom: 20px" after-text="@qq.com"></gan-input>
-    </div>
-    <div class="input-box">
-      <gan-input style="margin-bottom: 20px" size="medium"></gan-input>
-      <gan-input style="margin-bottom: 20px" before-text="https://" size="medium"></gan-input>
-      <gan-input style="margin-bottom: 20px" after-text="@qq.com" size="medium"></gan-input>
-    </div>
-    <div class="input-box">
-      <gan-input style="margin-bottom: 20px" size="small"></gan-input>
-      <gan-input style="margin-bottom: 20px" before-text="https://" size="small"></gan-input>
-      <gan-input style="margin-bottom: 20px" after-text="@qq.com" size="small"></gan-input>
-    </div>
+<!--    <div class="input-box">-->
+<!--      <gan-input style="margin-bottom: 20px" close></gan-input>-->
+<!--      <gan-input style="margin-bottom: 20px" before-text="https://"></gan-input>-->
+<!--      <gan-input style="margin-bottom: 20px" after-text="@qq.com"></gan-input>-->
+<!--    </div>-->
+<!--    <div class="input-box">-->
+<!--      <gan-input style="margin-bottom: 20px" size="medium"></gan-input>-->
+<!--      <gan-input style="margin-bottom: 20px" before-text="https://" size="medium"></gan-input>-->
+<!--      <gan-input style="margin-bottom: 20px" after-text="@qq.com" size="medium"></gan-input>-->
+<!--    </div>-->
+<!--    <div class="input-box">-->
+<!--      <gan-input style="margin-bottom: 20px" size="small"></gan-input>-->
+<!--      <gan-input style="margin-bottom: 20px" before-text="https://" size="small"></gan-input>-->
+<!--      <gan-input style="margin-bottom: 20px" after-text="@qq.com" size="small"></gan-input>-->
+<!--    </div>-->
+    <gan-progress :rote="105" type="success"></gan-progress>
   </div>
 </template>
 

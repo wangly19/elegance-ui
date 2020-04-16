@@ -20,6 +20,7 @@ import GanLink from '@/packages/GanLink'
 import GanCard from '@/packages/GanCard'
 import GanChecks from '@/packages/GanCheck'
 import GanInput from '@/packages/GanInput'
+import GanWindow from '@/packages/GanWindow'
 
 /**
  * 引入指令
@@ -49,7 +50,8 @@ const components = {
   GanLink,
   GanInput,
   ...GanChecks,
-  ...GanRadios
+  ...GanRadios,
+  GanWindow
 }
 const componentsName: { [propsName: string]: any } = { ...components }
 
