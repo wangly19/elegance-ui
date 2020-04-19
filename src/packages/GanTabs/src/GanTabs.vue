@@ -23,11 +23,11 @@ export default class GanTabs extends Vue {
   @Prop() data!: Array<Itabs>
   @Prop() isLink!: string | undefined
   private tabIndex: number = 0
+  private direction: number = 1
   get bindClass() {
     return (id: number) => {
       if (Object.is(this.tabIndex, id)) {
-        if (this.tabIndex < id) {
-          console.log('1')
+        if (this.direction === 1) {
           return ['next-active']
         } else {
           console.log('2')
@@ -44,6 +44,7 @@ export default class GanTabs extends Vue {
 
   activeTab (item: Itabs, index: number) {
     if (index === this.tabIndex) return
+    this.direction = index > this.tabIndex ? 1 : -1
     this.tabIndex = index
     this.$emit('taggleClick', { item, index })
   }
