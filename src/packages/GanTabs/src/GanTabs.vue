@@ -25,8 +25,21 @@ export default class GanTabs extends Vue {
   private tabIndex: number = 0
   get bindClass() {
     return (id: number) => {
-      return Object.is(this.tabIndex, id) && ['active']
+      if (Object.is(this.tabIndex, id)) {
+        if (this.tabIndex < id) {
+          console.log('1')
+          return ['next-active']
+        } else {
+          console.log('2')
+          return ['last-active']
+        }
+      }
     }
+  }
+
+  bindStyle(index: number) {
+    const animationName: string = index > this.tabIndex ? 'nextWidthAnim' : 'lastWidthAnim'
+    return { animation: `${animationName} .5s` }
   }
 
   activeTab (item: Itabs, index: number) {
@@ -56,15 +69,24 @@ export default class GanTabs extends Vue {
           background: rgba(0, 0, 0, 0.1);
         }
       }
-      .active{
+      .next-active{
+        background: $primary-color;
+        animation: nextWidthAnim .5s;
+        color: $light;
+      }
+      .last-active{
         background: $primary-color;
         animation: lastWidthAnim .5s;
         color: $light;
       }
     }
   }
+  @keyframes nextWidthAnim {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
   @keyframes lastWidthAnim {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
   }
 </style>

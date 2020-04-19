@@ -3,4 +3,4 @@
  * @param slotObject 插槽对象
  * @param slotName 查擦名称
  */
-export const verifySlot = (slotObject: object, slotName: string) => slotName in slotObject
+export const verifySlot = (slotObject: object, slotName: string): boolean => slotName in slotObject

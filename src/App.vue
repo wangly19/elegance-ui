@@ -25,6 +25,7 @@
         <li v-for="(item, index) in data" :key="index">{{item}}</li>
       </ul>
     </gan-scroll-view> -->
+    <gan-tabs :data="tabData" @taggleClick="Tabclick"/>
     <!-- <gan-tabs :data="tabData" @taggleClick="Tabclick">
     </gan-tabs>
     <gan-tooltip tooltip="测试文本" placement="top-left">
@@ -76,7 +77,9 @@
 <!--      <gan-input style="margin-bottom: 20px" before-text="https://" size="small"></gan-input>-->
 <!--      <gan-input style="margin-bottom: 20px" after-text="@qq.com" size="small"></gan-input>-->
 <!--    </div>-->
-    <gan-progress :rote="105" type="success"></gan-progress>
+    <!-- <gan-progress :rote="105" type="success"></gan-progress> -->
+    <!-- 1111 -->
+    <!-- <gan-window></gan-window> -->
   </div>
 </template>
 
