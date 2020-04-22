@@ -23,7 +23,8 @@ module.exports = {
     'import/no-duplicates': 0,
     'vue/valid-v-for': 0,
     'eol-last': 0,
-    'no-unused-vars': 0
+    'no-unused-vars': 0,
+    'vue/require-v-for-key': 0
   },
 
   parserOptions: {

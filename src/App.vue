@@ -25,12 +25,12 @@
         <li v-for="(item, index) in data" :key="index">{{item}}</li>
       </ul>
     </gan-scroll-view> -->
-    <gan-tabs :data="tabData" @taggleClick="Tabclick"/>
+    <!-- <gan-tabs :data="tabData" @taggleClick="Tabclick"/> -->
     <!-- <gan-tabs :data="tabData" @taggleClick="Tabclick">
     </gan-tabs>
     <gan-tooltip tooltip="测试文本" placement="top-left">
     </gan-tooltip> -->
-    <!-- <gan-page></gan-page> -->
+    <gan-page :total="10001" :page-size="20"></gan-page>
     <!-- <gan-button-group>
       <gan-button radius>1111</gan-button>
       <gan-button radius>1111</gan-button>
