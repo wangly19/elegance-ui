@@ -38,9 +38,9 @@ Elegance已经开源，可以在基础上进行修改，可以进行二次开发
 - [x] Scroll滚动视图组件
 ### 正在开发中
 
-- [ ] Page分页组件
+- [x] Page分页组件
 - [ ] Model模态框组件
-- [ ] Deware抽屉组件
+- [x] Deware抽屉组件
 - [ ] Notify通知组件
 - [ ] Selected下拉选择组件
 - [ ] Checkbox多选框组件
