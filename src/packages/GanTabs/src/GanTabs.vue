@@ -30,7 +30,6 @@ export default class GanTabs extends Vue {
         if (this.direction === 1) {
           return ['next-active']
         } else {
-          console.log('2')
           return ['last-active']
         }
       }

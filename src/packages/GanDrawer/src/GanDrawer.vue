@@ -1,8 +1,8 @@
 <template>
   <transition name="fade">
     <div class="gdrawer-container"
-    v-show="visible"
-    @click="closeDrawer">
+    v-show="visible">
+      <div class="share" @click.stop="closeDrawer"></div>
       <div class="content">
         <div class="content__header">
           <template v-if="isHeaderSlot">
@@ -54,7 +54,7 @@ export default class GanTabs extends Vue {
   @Prop({ default: '$label', required: false }) headerLabel!: string
   // icon
   @Prop({ default: 'icon-flashlight_fill', required: false }) headerIcon!: string
-
+  // 管理显示器
   @Prop() visible!: boolean
 
   // 插槽验证
@@ -76,17 +76,20 @@ export default class GanTabs extends Vue {
 <style lang="scss" scoped>
 @import '^/scss/global.d.scss';
 .gdrawer-container {
-  @include position($position: fixed, $left: 0, $top: 0);
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, .1);
-  z-index: 1000;
+  position: relative;
+  .share {
+    @include position($position: fixed, $left: 0, $top: 0);
+    background: rgba(0, 0, 0, .1);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+  }
   .content {
+    @include position($position: fixed, $right: 0, $top: 0);
     height: 100vh;
     width: 350px;
     z-index: 1001;
     background: $light;
-    float: right;
     box-shadow: 0 8px 10px -5px
     rgba(0,0,0,.2), 0 16px 24px 2px
     rgba(0,0,0,.14), 0 6px 30px 5px
@@ -108,7 +111,10 @@ export default class GanTabs extends Vue {
           color: $text-color;
         }
         &-icon {
+          display: inline-block;
           font-size: 25px;
+          width: 35px;
+          height: 35px;
           padding: 5px;
           transition: all .7s;
           &:hover {
@@ -126,6 +132,7 @@ export default class GanTabs extends Vue {
         padding: 10px 20px;
         &:hover {
           background: $border-color-base;
+          transition: all .7s;
           border-radius: 100px;
         }
       }
