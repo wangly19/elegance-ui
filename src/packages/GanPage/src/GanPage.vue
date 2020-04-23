@@ -23,7 +23,7 @@ import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 export default class GanPage extends Vue {
   @Prop({ default: 0 }) total!: number
   @Prop({ default: 10 }) pageSize!: number
-  // @Prop({ default: 1 }) current!: number
+  @Prop({ default: false }) showTotal!: boolean
   private current: number = 1
   private pages: any = []
   private pageLength = 0

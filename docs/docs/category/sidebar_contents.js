@@ -7,6 +7,7 @@ module.exports = [
 	"Input输入框",
 	"Tag标签",
 	"Card卡片",
+	"Pages分页",
 	"GanRadio单选",
 	"Tabs列表标签",
 	"Table表格",

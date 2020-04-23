@@ -30,7 +30,7 @@
     </gan-tabs>
     <gan-tooltip tooltip="测试文本" placement="top-left">
     </gan-tooltip> -->
-    <gan-page :total="10001" :page-size="20"></gan-page>
+    <!-- <gan-page :total="10001" :page-size="20"></gan-page> -->
     <!-- <gan-button-group>
       <gan-button radius>1111</gan-button>
       <gan-button radius>1111</gan-button>
@@ -80,6 +80,9 @@
     <!-- <gan-progress :rote="105" type="success"></gan-progress> -->
     <!-- 1111 -->
     <!-- <gan-window></gan-window> -->
+    <gan-drawer :visible.sync="isActive">
+    </gan-drawer>
+    <gan-button @click="isActive = !isActive">切换</gan-button>
   </div>
 </template>
 
