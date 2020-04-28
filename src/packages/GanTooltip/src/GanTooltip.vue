@@ -24,6 +24,7 @@ export default class GanTooltip extends Vue {
   display: none;
   content: attr(tooltip);
   position: absolute;
+  font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
