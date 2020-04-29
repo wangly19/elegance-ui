@@ -51,7 +51,7 @@ export default class GanTag extends Vue {
     return [
       'g-tag',
       hit && 'g-tag-hit',
-      type && !hit && tagActive && `g-bg-${type}` && 'g-color-light',
+      type && !hit && tagActive && `g-bg-${type} g-color-light`,
       `g-tag-${tagSize}`
     ]
   }

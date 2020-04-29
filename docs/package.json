@@ -17,7 +17,7 @@
   },
   "creator": ">=2.0.0",
   "dependencies": {
-    "elegance-ui": "^0.1.13",
+    "elegance-ui": "^0.1.15",
     "vuepress-theme-antdocs": "^1.0.0"
   }
 }

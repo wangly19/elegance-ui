@@ -66,7 +66,7 @@ export default class GanMessage extends Vue {
     transform: translate(-50%, 0);
     @include flex($align: center);
     padding: 15px 15px 15px 15px;
-    color: white;
+    color: $light;
     box-shadow: 0 2px 14px 0;
     .sub-text{
       display: inline-block;

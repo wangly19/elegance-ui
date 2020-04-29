@@ -1,4 +1,5 @@
 <template>
+<transition name="fade">
   <div class="g-window" ref="windowModel" v-if="visible">
     <div class="cover"></div>
     <div class="g-window__container" :class="isFull && 'full-window'">
@@ -29,6 +30,7 @@
       </div>
     </div>
   </div>
+</transition>
 </template>
 
 <script lang="ts">
@@ -91,6 +93,12 @@ export default class GanWindow extends Vue {
 
 <style lang="scss" scoped>
 @import '^/scss/global.d.scss';
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
   .g-window {
     @include position($position: fixed, $top: 0, $left: 0);
     background: $layer-color;

@@ -37,7 +37,7 @@ export default {
 <template>
   <div>
     <gan-button @click="openMessage(item)" v-for="item in types"
-    :key="item" :data-type="item" :style="{ margin: 20 }">打开{{item}}通知</gan-button>
+    :key="item" :data-type="item" style="margin-left: 20px;">打开{{item}}通知</gan-button>
   </div>
 </template>
 <script>

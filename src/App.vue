@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+        <gan-tag value="1112" type="success"/>
     <!-- <gan-icon name="icon-enterinto_fill"></gan-icon> -->
     <!-- <gan-icon name="icon-enterinto_fill"></gan-icon>
     <gan-row>
@@ -79,12 +80,12 @@
 <!--    </div>-->
     <!-- <gan-progress :rote="105" type="success"></gan-progress> -->
     <!-- 1111 -->
-    <gan-window :visible.sync="isActive">
+    <!-- <gan-window :visible.sync="isActive">
       111111111
-    </gan-window>
+    </gan-window> -->
     <!-- <gan-drawer :visible.sync="isActive">
     </gan-drawer> -->
-    <gan-button @click="isActive = !isActive">切换</gan-button>
+    <!-- <gan-button @click="isActive = !isActive">切换</gan-button> -->
   </div>
 </template>
 

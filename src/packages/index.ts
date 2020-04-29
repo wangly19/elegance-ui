@@ -81,7 +81,7 @@ const install = (vue: typeof Vue): void => {
  * exports components install object
  */
 export default {
-  version: '0.1.6 developer',
+  version: '0.1.14 developer',
   install,
   GMessages,
   // 展开组件

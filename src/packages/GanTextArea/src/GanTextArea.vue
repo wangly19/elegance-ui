@@ -5,6 +5,8 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'GanTextArea'
 })
 export default class GanTextArea extends Vue {
+  render(h: any) {
+  }
 }
 </script>
 

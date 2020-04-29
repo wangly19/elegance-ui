@@ -21,6 +21,7 @@ export default {
 ## 前置文本
 
 :::demo `before-text` 可以定义前置文本内容
+
 ```html {2}
 <template>
   <div class="input-box">
@@ -32,7 +33,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .input-boxs {
+  .input-box {
     margin-left: 200px;
   }
 </style>

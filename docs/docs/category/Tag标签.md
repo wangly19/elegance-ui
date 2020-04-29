@@ -34,7 +34,7 @@ export default {
 <template>
   <div>
     <gan-tag value="大" type="primary" size="medium"/>
-    <gan-tag type="中" value="基本用法"/>
+    <gan-tag value="中" type="primary"/>
     <gan-tag value="小" type="primary" size="small"/>
   </div>
 </template>

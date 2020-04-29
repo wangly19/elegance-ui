@@ -17,5 +17,6 @@ module.exports = [
 	"Loading加载指令",
 	"FullImage全屏图片组预览",
 	"Scroll滚动视图",
+	"Window模态框",
 	"Drawer抽屉"
 ];
