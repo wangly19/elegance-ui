@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[37],{757:function(t,e,n){"use strict";n.r(e);var a={},s=n(91),l=Object(s.a)(a,(function(){var t=this.$createElement,e=this._self._c||t;return e("div",[e("gan-page",{attrs:{total:1e3,"page-size":40,"show-total":!0}})],1)}),[],!1,null,null,null);e.default=l.exports}}]);

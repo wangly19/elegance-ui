@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-        <gan-tag value="1112" type="success"/>
+        <!-- <gan-tag value="1112" type="success"/> -->
     <!-- <gan-icon name="icon-enterinto_fill"></gan-icon> -->
     <!-- <gan-icon name="icon-enterinto_fill"></gan-icon>
     <gan-row>
@@ -86,22 +86,33 @@
     <!-- <gan-drawer :visible.sync="isActive">
     </gan-drawer> -->
     <!-- <gan-button @click="isActive = !isActive">切换</gan-button> -->
+    <gan-check-group v-model="checkbox">
+      <gan-check label="关羽" value="1"></gan-check>
+      <gan-check label="关羽" value="2"></gan-check>
+      <gan-check label="关羽" value="3"></gan-check>
+    </gan-check-group>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 
 @Component
 export default class App extends Vue {
   private count: number = 0
   private data: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  private checkbox: Array<number | string> = []
   private page: number = 1
   private isActive: boolean = false
   private tabData = [
     { label: 1, value: '111' },
     { label: 2, value: '222' }
   ]
+
+  @Watch('checkbox')
+  handleWatch(value: any) {
+    console.log(value)
+  }
 
   Tabclick(data: object) {
     console.log(data)
@@ -120,18 +131,13 @@ export default class App extends Vue {
   }
 
   openMessage() {
-    this.$message({
-      type: 'primary',
-      time: 2000
-    })
+    // this.$message({
+    //   type: 'primary',
+    //   time: 2000
+    // })
   }
 
   mounted() {
-    this.$message({
-      type: 'primary',
-      time: 2000
-    })
-    console.log(this.$message)
   }
 }
 </script>
