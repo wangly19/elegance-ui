@@ -5,6 +5,7 @@ module.exports = [
 	"Button按钮",
 	"Link链接",
 	"Input输入框",
+	"Checkbox多选框",
 	"Tag标签",
 	"Card卡片",
 	"Pages分页",
