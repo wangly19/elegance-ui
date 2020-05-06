@@ -17,6 +17,7 @@ import GanButtonGroup from '@/packages/GanButtoGroup'
 import GanTable from '@/packages/GanTable'
 import GanRadios from '@/packages/GanRadio'
 import GanLink from '@/packages/GanLink'
+import GanImage from '@/packages/GanImage'
 import GanCard from '@/packages/GanCard'
 import GanChecks from '@/packages/GanCheck'
 import GanInput from '@/packages/GanInput'
@@ -49,6 +50,7 @@ const components = {
   GanTable,
   GanCard,
   GanLink,
+  GanImage,
   GanInput,
   GanWindow,
   GanDrawer,

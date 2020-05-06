@@ -86,11 +86,13 @@
     <!-- <gan-drawer :visible.sync="isActive">
     </gan-drawer> -->
     <!-- <gan-button @click="isActive = !isActive">切换</gan-button> -->
-    <gan-check-group v-model="checkbox">
+    <!-- <gan-check-group v-model="checkbox">
       <gan-check label="关羽" value="1"></gan-check>
       <gan-check label="关羽" value="2"></gan-check>
       <gan-check label="关羽" value="3"></gan-check>
-    </gan-check-group>
+    </gan-check-group> -->
+    <gan-image :width="30" :height="30" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg">
+    </gan-image>
   </div>
 </template>
 
