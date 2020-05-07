@@ -17,6 +17,7 @@ module.exports = [
 	"Message通知",
 	"Loading加载指令",
 	"FullImage全屏图片组预览",
+	"Image图片",
 	"Scroll滚动视图",
 	"Window模态框",
 	"Drawer抽屉"

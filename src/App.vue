@@ -91,8 +91,11 @@
       <gan-check label="关羽" value="2"></gan-check>
       <gan-check label="关羽" value="3"></gan-check>
     </gan-check-group> -->
-    <gan-image :width="30" :height="30" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg">
-    </gan-image>
+    <!-- <gan-image :width="100" :height="100" src="https://dss2.bdtic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg">
+    </gan-image> -->
+    <div class="outside" v-gan-out="bindOutSide" v-show="move">
+      111
+    </div>
   </div>
 </template>
 
@@ -106,6 +109,7 @@ export default class App extends Vue {
   private checkbox: Array<number | string> = ['1', '2']
   private page: number = 1
   private isActive: boolean = false
+  private move: boolean = true
   private tabData = [
     { label: 1, value: '111' },
     { label: 2, value: '222' }
@@ -118,6 +122,10 @@ export default class App extends Vue {
 
   Tabclick(data: object) {
     console.log(data)
+  }
+
+  bindOutSide() {
+    this.move = !this.move
   }
 
   callback() {
@@ -154,7 +162,10 @@ export default class App extends Vue {
   margin-top: 100px;
   margin-left: 100px;
   align-items: center;
-  .input-box{
+  .outside {
+    width: 100px;
+    height: 100px;
+    background: red;
   }
 }
 </style>

@@ -28,6 +28,7 @@ import GanDrawer from '@/packages/GanDrawer'
  * 引入指令
  */
 import '@/packages/GanLoading'
+import '@/packages/GanClickOutSite'
 
 /**
  * 获取组件集合

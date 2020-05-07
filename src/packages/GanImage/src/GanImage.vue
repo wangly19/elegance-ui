@@ -1,8 +1,9 @@
 <template>
   <div class="gan-image" :style="{ width: `${width}px`, height: `${height}px` }">
     <div class="over" v-if="state !== 'resolve'">{{cellText}}</div>
-    <img :src="src" class="gan-image-box" :width="width" :height="height"
-    @load="onImageResolve" @error="onImageReject()" :style="{ objectFit: fit }">
+    <img :src="src" class="gan-image-box"
+    :width="width" :height="height" :style="{ objectFit: fit }"
+    @load.prevent="onImageResolve" @error.prevent="onImageReject()" />
   </div>
 </template>
 
@@ -21,7 +22,7 @@ export default class GanImage extends Vue {
   private state = 'pending'
   // 图片加载中
   private onImageResolve(): void {
-    this.state = 'resolve' // 成功
+    this.state = 'resolve'
     this.$emit('resolve', this.state)
   }
 
