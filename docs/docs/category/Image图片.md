@@ -85,8 +85,9 @@ object-fit CSS样式的设置
 ```html {2}
 <template>
   <span>
+    <gan-image :width="100" :height="100" :src="url"/>
     <gan-image :width="100" :height="100" :src="url"
-    v-for="item in fit" :key="item" :fit="fit" style="margin: 10px;" />
+    v-for="item in fit" :key="item" :fit="fit"/>
   </span>
 </template>
 <script>
