@@ -93,16 +93,19 @@
     </gan-check-group> -->
     <!-- <gan-image :width="100" :height="100" src="https://dss2.bdtic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg">
     </gan-image> -->
-    <div class="outside" v-gan-out="bindOutSide" v-show="move">
-      111
-    </div>
+    <!-- <div :class="$style.outside" v-gan-out="bindOutSide" v-show="move">
+      {{$style}}
+    </div> -->
+    <gan-dev-input></gan-dev-input>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
 
-@Component
+@Component({
+  name: 'App'
+})
 export default class App extends Vue {
   private count: number = 0
   private data: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -167,5 +170,13 @@ export default class App extends Vue {
     height: 100px;
     background: red;
   }
+}
+</style>
+
+<style lang="scss" module>
+.outside {
+  width: 100px;
+  height: 100px;
+  background: red;
 }
 </style>

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[45],{767:function(a,t,e){"use strict";e.r(t);var n={data:function(){return{tabData:[{label:1,value:"标签一"},{label:2,value:"标签二"}]}}},l=e(91),u=Object(l.a)(n,(function(){var a=this.$createElement,t=this._self._c||a;return t("div",[t("gan-tabs",{attrs:{data:this.tabData}})],1)}),[],!1,null,null,null);t.default=u.exports}}]);
