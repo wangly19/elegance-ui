@@ -1,23 +1,28 @@
 <template>
   <div class="gan-input-next">
     <span class="first">
-      <template v-if="entryFirst.term">
+      <template v-if="entryFirst.term && entryFirst.text">
         {{entryFirst.text}}
       </template>
       <gan-icon :name="entryFirst.text" class="slot-icon" v-else/>
     </span>
-    <input type="text" class="g-input">
+    <input type="text" class="g-input" :value="value"
+    :placeholder="placeholder"
+    @focus="$emit('focus')"
+    @input="$emit('input', $event.target.value)">
     <span class="tail">
-      <template v-if="entryTail.term">
+      <template v-if="entryTail.term && entryTail.text">
         {{entryTail.text}}
       </template>
-      <gan-icon :name="entryTail.text" class="slot-icon" v-else/>
+      <gan-icon :name="entryTail.text" class="slot-icon"
+      @click.stop="$emit('onTail')" point
+      v-else/>
     </span>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch, Prop } from 'vue-property-decorator'
 import GanIcon from '@/packages/GanIcon'
 
 @Component({
@@ -25,6 +30,9 @@ import GanIcon from '@/packages/GanIcon'
   components: { GanIcon }
 })
 export default class GanDevInput extends Vue {
+  @Prop() value!: string
+  @Prop({ default: '请输入' }) placeholder!: string
+
   get entryFirst(): object {
     const $attr: Record<string, string> = this.$attrs
     const firsts: Array<string> = $attr.first ? $attr.first.split('|') : ['text', '']
@@ -42,6 +50,7 @@ export default class GanDevInput extends Vue {
       text: tails[1] ? tails[1] : ''
     }
   }
+
 }
 </script>
 
@@ -51,9 +60,8 @@ $baseSize: 30px;
 .gan-input-next {
   display: inline-block;
   line-height: $baseSize;
-  min-width: 200px;
   .slot-icon {
-    font-size: 14px;
+    font-size: 20px;
   }
   .first {
     font-size: 12px;
@@ -80,14 +88,18 @@ $baseSize: 30px;
 .gan-input-next[group] {
   .g-input {
     border-radius: 0;
+    float: left;
   }
   .first {
     display: inline-block;
     padding-left: 5px;
+    float: left;
   }
   .tail {
     display: inline-block;
     padding-right: 5px;
+    max-height: 30px;
+    float: left;
   }
 }
 </style>

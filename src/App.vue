@@ -96,7 +96,11 @@
     <!-- <div :class="$style.outside" v-gan-out="bindOutSide" v-show="move">
       {{$style}}
     </div> -->
-    <gan-dev-input></gan-dev-input>
+    <!-- <gan-dev-input v-model="inputText"></gan-dev-input> -->
+    <!-- {{inputText}} -->
+    <gan-select :options="options" v-model="inputText"></gan-select>
+    <!-- {{count}} -->
+    关羽 1
   </div>
 </template>
 
@@ -107,12 +111,21 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
   name: 'App'
 })
 export default class App extends Vue {
+  private options: any = [
+    { label: '关羽', value: 1 },
+    { label: '张飞', value: 2 },
+    { label: '赵云', value: 3 },
+    { label: '刘备', value: 4 },
+    { label: '马超', value: 5 }
+  ]
+
   private count: number = 0
   private data: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   private checkbox: Array<number | string> = ['1', '2']
   private page: number = 1
   private isActive: boolean = false
   private move: boolean = true
+  private inputText: string = '111'
   private tabData = [
     { label: 1, value: '111' },
     { label: 2, value: '222' }
@@ -125,6 +138,11 @@ export default class App extends Vue {
 
   Tabclick(data: object) {
     console.log(data)
+  }
+
+  @Watch('inputText')
+  handleInput(newVal: string) {
+    console.log(newVal)
   }
 
   bindOutSide() {

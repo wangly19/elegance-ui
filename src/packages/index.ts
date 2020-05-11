@@ -22,6 +22,7 @@ import GanCard from '@/packages/GanCard'
 import GanChecks from '@/packages/GanCheck'
 import GanInput from '@/packages/GanInput'
 import GanDevInput from '@/packages/GanDevInput'
+import GanSelect from '@/packages/GanSelect'
 import GanWindow from '@/packages/GanWindow'
 import GanDrawer from '@/packages/GanDrawer'
 
@@ -55,6 +56,7 @@ const components = {
   GanImage,
   GanInput,
   GanDevInput,
+  GanSelect,
   GanWindow,
   GanDrawer,
   ...GanChecks,
