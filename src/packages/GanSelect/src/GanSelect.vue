@@ -55,9 +55,6 @@ export default class GanSelect extends Vue {
 
 <style lang="scss" scoped>
 @import '^/scss/global.d.scss';
-* {
-  transition: display 1s;
-}
 .success-icon {
   font-size: 16px;
 }
@@ -67,7 +64,7 @@ export default class GanSelect extends Vue {
     background: $light;
     height: 120px;
     overflow: auto;
-    margin-top: 10px;
+    margin-right: 5px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
     border-radius: 3px;
     .select-item {

@@ -100,7 +100,6 @@
     <!-- {{inputText}} -->
     <gan-select :options="options" v-model="inputText"></gan-select>
     <!-- {{count}} -->
-    关羽 1
   </div>
 </template>
 
@@ -111,6 +110,9 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
   name: 'App'
 })
 export default class App extends Vue {
+  private info: any = {}
+  private infoMap: Map<string, string> | null = null
+
   private options: any = [
     { label: '关羽', value: 1 },
     { label: '张飞', value: 2 },
@@ -188,13 +190,10 @@ export default class App extends Vue {
     height: 100px;
     background: red;
   }
-}
-</style>
-
-<style lang="scss" module>
-.outside {
-  width: 100px;
-  height: 100px;
-  background: red;
+  .info-item {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 </style>
