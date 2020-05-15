@@ -1,8 +1,8 @@
 <template>
 <transition name="fade">
-  <div class="g-window" ref="windowModel" v-if="visible">
+  <div class="g-window" ref="windowModel" v-if="value">
     <div class="cover"></div>
-    <div class="g-window__container" :class="isFull && 'full-window'">
+    <div class="g-window__container" :class="isFull && 'full-window'" v-gan-out="onCloseWindow">
       <div class="con-header">
         {{headerTitle}}
         <ul class="con-header__tool">
@@ -45,7 +45,7 @@ import { verifySlot } from '@/tools/utils'
   components: { GanIcon, GanButton, GanTooltip }
 })
 export default class GanWindow extends Vue {
-  @Prop({ required: false, default: false, type: Boolean }) visible!: boolean
+  @Prop({ required: false, default: false, type: Boolean }) value!: boolean
   @Prop({ required: false, default: '$header-title', type: String }) headerTitle!: string
   @Prop({ required: false, default: '$footer-submit', type: String }) footerSubmit!: string
   @Prop({ required: false, default: '$footer-cancel', type: String }) footerCancel!: string
@@ -57,6 +57,10 @@ export default class GanWindow extends Vue {
     { label: '全屏', value: 'blow' },
     { label: '关闭', value: 'exit' }
   ]
+
+  onCloseWindow() {
+    this.$emit('input', false)
+  }
 
   // 存在footer插槽
   get isSlotFooter() {
@@ -82,7 +86,7 @@ export default class GanWindow extends Vue {
    */
   private toolCheckBar(label: string, value: string) {
     switch (value) {
-      case 'exit': this.$emit('update:visible', false)
+      case 'exit': this.$emit('input', false)
         break
       case 'blow': this.isFull = !this.isFull
         break
@@ -131,14 +135,14 @@ export default class GanWindow extends Vue {
       @include flex($direction: column);
       .con-header {
         @include flex($justify: space-between);
-        font-size: 22px;
+        font-size: 20px;
         padding: 20px;
         width: 100%;
         &__tool {
           @include flex();
           ol {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             margin-left: 5px;
             position: relative;

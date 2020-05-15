@@ -98,8 +98,11 @@
     </div> -->
     <!-- <gan-dev-input v-model="inputText"></gan-dev-input> -->
     <!-- {{inputText}} -->
-    <gan-select :options="options" v-model="inputText"></gan-select>
+    <!-- <gan-select :options="options" v-model="inputText"></gan-select> -->
     <!-- {{count}} -->
+    <gan-window v-model="isActive">
+      111111111
+    </gan-window>
   </div>
 </template>
 
@@ -125,7 +128,7 @@ export default class App extends Vue {
   private data: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   private checkbox: Array<number | string> = ['1', '2']
   private page: number = 1
-  private isActive: boolean = false
+  private isActive: boolean = true
   private move: boolean = true
   private inputText: string = '111'
   private tabData = [
