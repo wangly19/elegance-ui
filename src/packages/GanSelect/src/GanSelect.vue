@@ -2,7 +2,7 @@
   <div class="gan-select" v-gan-out="onCloseSelectOption">
     <gan-dev-input
       group
-      tail="icon|icon-addition"
+      :tail="selectIcon"
       v-model="selectLabel"
       @onTail="hiddenSelectOption = !hiddenSelectOption"
       @focus="onShowSelectOption"></gan-dev-input>
@@ -37,10 +37,25 @@ export default class GanSelect extends Vue {
   private selectValue: string | number = ''
   private selectLabel: string | number = ''
   private hiddenSelectOption: boolean = false
+
+  // 显示得select图标
+  get selectIcon(): string {
+    const iconTail: string = `icon|${this.hiddenSelectOption ? 'icon-link' : 'icon-addition'}`
+    return iconTail
+  }
+
+  private filterSelectOptions() {
+    const findOption: object | undefined = this.options.find((res: any) => res.value === this.selectValue)
+    console.log(findOption || this.options)
+    return findOption || this.options
+  }
+
+  // 显示Select选项
   private onShowSelectOption(): void {
     this.hiddenSelectOption = true
   }
 
+  // 关闭Select选项
   private onCloseSelectOption(): void {
     this.hiddenSelectOption = false
   }

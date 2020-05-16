@@ -151,10 +151,10 @@ export default class GanWindow extends Vue {
               content: "";
               @include position($position: absolute, $top: 50%, $left: 50%);
               transform: translate(-50%, -50%);
-              width: 8px;
-              height: 8px;
+              width: 7px;
+              height: 7px;
               border-radius: 50%;
-              background: $light;
+              background: rgba(0, 0, 0, 0.3);
             }
           }
           .exit {
