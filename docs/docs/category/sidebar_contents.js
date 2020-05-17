@@ -6,6 +6,7 @@ module.exports = [
 	"Link链接",
 	"Input输入框",
 	"Checkbox多选框",
+	"Select下拉选择框",
 	"Tag标签",
 	"Card卡片",
 	"Pages分页",
@@ -18,6 +19,7 @@ module.exports = [
 	"Loading加载指令",
 	"FullImage全屏图片组预览",
 	"Image图片",
+	"Range滑块.md",
 	"Scroll滚动视图",
 	"Window模态框",
 	"Drawer抽屉"
