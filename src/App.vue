@@ -98,11 +98,12 @@
     </div> -->
     <!-- <gan-dev-input v-model="inputText"></gan-dev-input> -->
     <!-- {{inputText}} -->
-    <gan-select :options="options" v-model="inputText"></gan-select>
+    <!-- <gan-select :options="options" v-model="inputText"></gan-select> -->
     <!-- {{count}} -->
     <!-- <gan-window v-model="isActive">
       111111111
     </gan-window> -->
+    <gan-range></gan-range>
   </div>
 </template>
 

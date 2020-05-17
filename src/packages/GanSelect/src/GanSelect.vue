@@ -6,18 +6,20 @@
       v-model="selectLabel"
       @onTail="hiddenSelectOption = !hiddenSelectOption"
       @focus="onShowSelectOption"></gan-dev-input>
-    <ul class="select-container" v-show="hiddenSelectOption">
-      <ol class="select-item"
-      @click="onPitch(item)"
-      v-for="item in options"
-      :class="item.value === selectValue && 'select-avtive'"
-      :key="item.value">
-        <span class="select-item__label">{{item.label}}</span>
-        <gan-icon name="icon-success"
-        v-if="item.value === selectValue"
-        class="success-icon"/>
-      </ol>
-    </ul>
+    <transition name="fade">
+      <ul class="select-container" v-show="hiddenSelectOption">
+        <ol class="select-item"
+        @click="onPitch(item)"
+        v-for="item in options"
+        :class="item.value === selectValue && 'select-avtive'"
+        :key="item.value">
+          <span class="select-item__label">{{item.label}}</span>
+          <gan-icon name="icon-success"
+          v-if="item.value === selectValue"
+          class="success-icon"/>
+        </ol>
+      </ul>
+    </transition>
   </div>
 </template>
 
