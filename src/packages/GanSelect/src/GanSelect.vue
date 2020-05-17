@@ -48,7 +48,6 @@ export default class GanSelect extends Vue {
 
   private filterSelectOptions() {
     const findOption: object | undefined = this.options.find((res: any) => res.value === this.selectValue)
-    console.log(findOption || this.options)
     return findOption || this.options
   }
 

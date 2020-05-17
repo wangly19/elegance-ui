@@ -1,6 +1,6 @@
 {
   "name": "elegance-ui",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "main": "lib/index.umd.min.js",
   "private": false,
   "scripts": {

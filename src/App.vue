@@ -103,6 +103,7 @@
     <!-- <gan-window v-model="isActive">
       111111111
     </gan-window> -->
+    <gan-select :options="options" v-model="inputText"></gan-select>
     <gan-range></gan-range>
   </div>
 </template>
