@@ -17,7 +17,9 @@ export default class GanRange extends Vue {
         'gan-range'
       ],
       on: {
-        change: (event: any) => (this.$emit('input', event.target.value))
+        change: (event: any) => {
+          this.$emit('input', event.target.value)
+        }
       }
     })
   }
