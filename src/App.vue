@@ -103,79 +103,64 @@
     <!-- <gan-window v-model="isActive">
       111111111
     </gan-window> -->
-    <gan-select :options="options" v-model="inputText"></gan-select>
-    <gan-range></gan-range>
+    <!-- <gan-select :options="options" v-model="inputText"></gan-select>
+    <gan-range></gan-range> -->
+    <!-- <input type="file" @change="handleUpload">
+    <gan-button type="primary" :loading="false" @click="uploadFile">上传</gan-button> -->
+    <gan-button type="primary" :loading="false" @click.prevent="isActive = true">上传</gan-button>
+    <gan-window v-model="isActive">
+      111111111
+    </gan-window>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
   name: 'App'
 })
 export default class App extends Vue {
-  private info: any = {}
-  private infoMap: Map<string, string> | null = null
-
-  private options: any = [
-    { label: '关羽', value: 1 },
-    { label: '张飞', value: 2 },
-    { label: '赵云', value: 3 },
-    { label: '刘备', value: 4 },
-    { label: '马超', value: 5 }
-  ]
-
-  private count: number = 0
-  private data: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  private checkbox: Array<number | string> = ['1', '2']
-  private page: number = 1
-  private isActive: boolean = true
-  private move: boolean = true
-  private inputText: string = '111'
-  private tabData = [
-    { label: 1, value: '111' },
-    { label: 2, value: '222' }
-  ]
-
-  @Watch('checkbox')
-  handleWatch(value: any) {
-    console.log(value)
+  private isActive: boolean = false
+  private file: any = null
+  private fileList: Array<Blob | File> = []
+  private start: number = 0
+  // 上传图片
+  uploadFile() {
+    const blobFile: Blob = new Blob(this.fileList)
+    console.log('合并后的file:', blobFile)
   }
 
-  Tabclick(data: object) {
-    console.log(data)
+  // 文件切片
+  createFileChunk(file:File, _size: number = 500) {
+    // 文件大小
+    const fileSize: number = file.size
+    // 开始字节
+    let startSize: number = 0
+    // 切片计算
+    const chunkCount: number = Math.ceil(fileSize / _size)
+    // 计算页码
+    let page: number = 1
+    // 切片列表
+    const fileList: Array<Blob | File> = []
+    while (page <= chunkCount) {
+      const chunkFile:File | Blob = file.slice(startSize, startSize + _size)
+      fileList.push(chunkFile)
+      startSize = startSize + _size
+      page++
+    }
+    console.log('切片后的file:', fileList)
+    this.fileList = fileList
+    this.start = startSize
   }
 
-  @Watch('inputText')
-  handleInput(newVal: string) {
-    console.log(newVal)
-  }
-
-  bindOutSide() {
-    this.move = !this.move
-  }
-
-  callback() {
-    const promise = new Promise(resolve => {
-      setTimeout(() => {
-        this.page += 1
-        for (let i = 0; i < 10; i++) {
-          this.data.push(this.page * i + 1)
-        }
-      }, 1000)
-      resolve()
-    })
-  }
-
-  openMessage() {
-    // this.$message({
-    //   type: 'primary',
-    //   time: 2000
-    // })
-  }
-
-  mounted() {
+  // 文件回调
+  private handleUpload(e: Event) {
+    const [file] = (e.target as any).files
+    if (!file) return
+    this.file = file
+    console.log(file)
+    this.createFileChunk(file)
   }
 }
 </script>

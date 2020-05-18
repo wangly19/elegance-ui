@@ -2,7 +2,7 @@
 <transition name="fade">
   <div class="g-window" ref="windowModel" v-if="value">
     <div class="cover"></div>
-    <div class="g-window__container" :class="isFull && 'full-window'" v-gan-out="onCloseWindow">
+    <div class="g-window__container" :class="isFull && 'full-window'">
       <div class="con-header">
         {{headerTitle}}
         <ul class="con-header__tool">
@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Emit } from 'vue-property-decorator'
+import { Component, Vue, Prop, Emit, Watch } from 'vue-property-decorator'
 import GanIcon from '@/packages/GanIcon'
 import GanButton from '@/packages/GanButton'
 import GanTooltip from '@/packages/GanTooltip'
@@ -45,7 +45,7 @@ import { verifySlot } from '@/tools/utils'
   components: { GanIcon, GanButton, GanTooltip }
 })
 export default class GanWindow extends Vue {
-  @Prop({ required: false, default: false, type: Boolean }) value!: boolean
+  @Prop({ required: false, type: Boolean }) value!: boolean
   @Prop({ required: false, default: '$header-title', type: String }) headerTitle!: string
   @Prop({ required: false, default: '$footer-submit', type: String }) footerSubmit!: string
   @Prop({ required: false, default: '$footer-cancel', type: String }) footerCancel!: string
@@ -59,7 +59,9 @@ export default class GanWindow extends Vue {
   ]
 
   onCloseWindow() {
-    this.$emit('input', false)
+    // this.$emit('onClose', false)
+    this.isFull = false
+    this.$emit('input', !this.value)
   }
 
   // 存在footer插槽
@@ -86,12 +88,18 @@ export default class GanWindow extends Vue {
    */
   private toolCheckBar(label: string, value: string) {
     switch (value) {
-      case 'exit': this.$emit('input', false)
+      case 'exit': this.onCloseWindow()
         break
       case 'blow': this.isFull = !this.isFull
         break
     }
   }
+
+  @Watch('value')
+  handle(newVal: boolean, oldVal: boolean) {
+    console.log(newVal, oldVal)
+  }
+
 }
 </script>
 
