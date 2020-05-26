@@ -1,6 +1,6 @@
 <template>
 <transition name="fade">
-  <div class="g-window" ref="windowModel" v-if="value">
+  <div class="g-window" ref="windowModel" v-show="value">
     <div class="cover"></div>
     <div class="g-window__container" :class="isFull && 'full-window'">
       <div class="con-header">
@@ -59,7 +59,7 @@ export default class GanWindow extends Vue {
   ]
 
   onCloseWindow() {
-    // this.$emit('onClose', false)
+    // this.$emit('onClose')
     this.isFull = false
     this.$emit('input', !this.value)
   }
