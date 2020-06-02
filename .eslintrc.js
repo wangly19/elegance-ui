@@ -5,7 +5,7 @@ module.exports = {
     node: true
   },
 
-  'extends': [
+  extends: [
     'plugin:vue/essential',
     '@vue/standard',
     '@vue/typescript'

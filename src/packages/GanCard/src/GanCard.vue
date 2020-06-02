@@ -67,7 +67,8 @@ export default class GanCard extends Vue {
    * 判断是否存在该插槽
    */
   get isHaveSlot() {
-    return (slot: string) => this.$scopedSlots.hasOwnProperty(slot)
+    // return (slot: string) => this.$scopedSlots.hasOwnProperty(slot)
+    return false
   }
 }
 </script>
