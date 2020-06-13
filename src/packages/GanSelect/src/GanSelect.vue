@@ -79,14 +79,17 @@ export default class GanSelect extends Vue {
   .select-container {
     background: $light;
     height: 120px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin-right: 5px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    padding: 0;
     border-radius: 3px;
     .select-item {
       @include flex($justify: space-between, $align: center);
       cursor: pointer;
-      padding: 5px 10px 5px 10px;
+      padding: 0;
+      line-height: 30px;
       width: 100%;
       transition: background .7s;
       &:hover {
@@ -94,6 +97,7 @@ export default class GanSelect extends Vue {
       }
       &__label {
         font-size: 16px;
+        padding-left: 10px;
       }
     }
     .select-avtive {

@@ -26,6 +26,7 @@ import GanSelect from '@/packages/GanSelect'
 import GanWindow from '@/packages/GanWindow'
 import GanRange from '@/packages/GanRange'
 import GanDrawer from '@/packages/GanDrawer'
+import GanAvatar from '@/packages/GanAvatar'
 
 /**
  * 引入指令
@@ -62,7 +63,8 @@ const components = {
   GanWindow,
   GanDrawer,
   ...GanChecks,
-  ...GanRadios
+  ...GanRadios,
+  GanAvatar
 }
 const componentsName: { [propsName: string]: any } = { ...components }
 

@@ -19,6 +19,7 @@ module.exports = [
 	"Loading加载指令",
 	"FullImage全屏图片组预览",
 	"Image图片",
+	"Avatar头像",
 	"Range滑块.md",
 	"Scroll滚动视图",
 	"Window模态框",

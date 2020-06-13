@@ -1,11 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/map">MapPlugin</router-link> |
     </div>
-    <router-view/>
+    <router-view/> -->
+    <gan-avatar src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3892521478,1695688217&fm=26&gp=0.jpg" name="Wangly"></gan-avatar>
+    <gan-select :options="options" v-model="value"></gan-select>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    value: 0,
+    options: [
+      { label: '关羽', value: 1 },
+      { label: '张飞', value: 2 },
+      { label: '赵云', value: 3 },
+      { label: '刘备', value: 4 },
+      { label: '马超', value: 5 }
+    ]
+  })
+}
+</script>
 
 <style lang="scss">
 #app {

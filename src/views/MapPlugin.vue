@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <gan-avatar></gan-avatar>
   </div>
 </template>
 
