@@ -6,6 +6,18 @@
     <router-view/> -->
     <gan-avatar src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3892521478,1695688217&fm=26&gp=0.jpg" name="Wangly"></gan-avatar>
     <gan-select :options="options" v-model="value"></gan-select>
+    <br>
+    <gan-swiper>
+      <gan-swiper-item :term="1">
+        11111
+      </gan-swiper-item>
+      <gan-swiper-item :term="2">
+        222
+      </gan-swiper-item>
+      <gan-swiper-item :term="3">
+        3333
+      </gan-swiper-item>
+    </gan-swiper>
   </div>
 </template>
 

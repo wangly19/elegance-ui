@@ -27,6 +27,7 @@ import GanWindow from '@/packages/GanWindow'
 import GanRange from '@/packages/GanRange'
 import GanDrawer from '@/packages/GanDrawer'
 import GanAvatar from '@/packages/GanAvatar'
+import GanSwipers from '@/packages/GanSwiper'
 
 /**
  * 引入指令
@@ -64,6 +65,7 @@ const components = {
   GanDrawer,
   ...GanChecks,
   ...GanRadios,
+  ...GanSwipers,
   GanAvatar
 }
 const componentsName: { [propsName: string]: any } = { ...components }

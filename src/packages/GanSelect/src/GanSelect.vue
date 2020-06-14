@@ -76,7 +76,10 @@ export default class GanSelect extends Vue {
 }
 .gan-select {
   display: inline-block;
+  position: relative;
   .select-container {
+    @include position($position: absolute, $top: 20px);
+    width: 100%;
     background: $light;
     height: 120px;
     overflow-y: auto;
