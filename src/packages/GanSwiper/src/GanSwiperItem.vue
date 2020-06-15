@@ -25,10 +25,6 @@ export default class GanSwiperItem extends Vue {
    */
   get itemBoxSize () {
     const { width, height } = this
-    console.log({
-      width,
-      height
-    })
     return {
       width,
       height
