@@ -1,17 +1,17 @@
 <template>
-  <div class="gan-swiper">
+  <div class="gan-swiper" :style="swiperSize">
     <div class="gan-swiper-container">
       <slot></slot>
     </div>
     <gan-icon name="icon-leftarrow" class="tool-icon last-icon" bold
-    @click="taggleSwiper('last')"></gan-icon>
+      @click="taggleSwiper('last')"></gan-icon>
     <gan-icon name="icon-Rightarrow" class="tool-icon next-icon" bold
-    @click="taggleSwiper('next')"></gan-icon>
+      @click="taggleSwiper('next')"></gan-icon>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import GanIcon from '@/packages/GanIcon'
 
 @Component({
@@ -21,7 +21,19 @@ import GanIcon from '@/packages/GanIcon'
   }
 })
 export default class GanSwiper extends Vue {
+  @Prop({ default: 200 }) width!: number | string
+  @Prop({ default: 200 }) height!: number | string
+
   private currentIndex: number = 0
+
+  get swiperSize () {
+    const { width, height } = this
+    return {
+      width: `${width}px`,
+      height: `${height}px`
+    }
+  }
+
   get setZindex () {
     return {
       zIndex: 1
@@ -36,9 +48,10 @@ export default class GanSwiper extends Vue {
     const componentList: Vue[] = this.$children.filter((vue: any) => {
       return vue.setTerm !== undefined
     })
-    if (state === 'last') {
-      this.currentIndex === 0 ? this.currentIndex = componentList.length - 1 : this.currentIndex--
-      console.log(this.currentIndex)
+    /**
+     * 初始化
+     */
+    if (state === 'init') {
       componentList.forEach((vue: any, index: number) => {
         if (this.currentIndex === index) {
           vue.setTerm(true)
@@ -46,7 +59,22 @@ export default class GanSwiper extends Vue {
           vue.setTerm(false)
         }
       })
-    } else {
+    }
+    console.log(this.currentIndex)
+    /**
+     * 前进，后退
+     */
+    if (state === 'last') {
+      this.currentIndex === 0 ? this.currentIndex = componentList.length - 1 : this.currentIndex--
+      componentList.forEach((vue: any, index: number) => {
+        if (this.currentIndex === index) {
+          vue.setTerm(true)
+        } else {
+          vue.setTerm(false)
+        }
+      })
+    }
+    if (state === 'next') {
       this.currentIndex === componentList.length - 1 ? this.currentIndex = 0 : this.currentIndex++
       componentList.forEach((vue: any, index: number) => {
         if (this.currentIndex === index) {
@@ -57,14 +85,18 @@ export default class GanSwiper extends Vue {
       })
     }
   }
+
+  mounted() {
+    this.$nextTick(() => {
+      this.taggleSwiper('init')
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '^/scss/global.d.scss';
 .gan-swiper {
-  width: 200px;
-  height: 200px;
   display: inline-block;
   position: relative;
   &-container {
@@ -72,9 +104,8 @@ export default class GanSwiper extends Vue {
     .gan-swiper-item {
       @include position($position: absolute, $top: 0, $left: 0);
       text-align: left;
-      height: 200px;
-      width: 200px;
       background: #888;
+      overflow: hidden;
     }
   }
   .tool-icon {
@@ -85,7 +116,7 @@ export default class GanSwiper extends Vue {
     transition: all .5s;
     cursor: pointer;
     &:hover {
-      background: rgba(255, 255, 255, .2);
+      background: rgba(0, 0, 0, .2);
     }
   }
   .last-icon {
