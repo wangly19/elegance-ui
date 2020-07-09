@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import GanIcon from '@/packages/GanIcon'
 
 @Component({
@@ -101,6 +101,12 @@ export default class GanSwiper extends Vue {
       this.listSize = componentList.length
       this.taggleSwiper('init')
     })
+  }
+
+  @Watch('currentIndex')
+  changeIndex(newVal: number, oldVal: number) {
+    console.log(newVal, oldVal)
+    this.$emit('onChange', { newVal, oldVal });
   }
 }
 </script>
