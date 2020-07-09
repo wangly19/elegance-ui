@@ -97,7 +97,7 @@ export default class GanWindow extends Vue {
 
   @Watch('value')
   handle(newVal: boolean, oldVal: boolean) {
-    console.log(newVal, oldVal)
+    // console.log(newVal, oldVal)
   }
 
 }

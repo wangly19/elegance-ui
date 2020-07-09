@@ -106,7 +106,7 @@ export default class GanSwiper extends Vue {
   @Watch('currentIndex')
   changeIndex(newVal: number, oldVal: number) {
     console.log(newVal, oldVal)
-    this.$emit('onChange', { newVal, oldVal });
+    this.$emit('onChange', { newVal, oldVal })
   }
 }
 </script>

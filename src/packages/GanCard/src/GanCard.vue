@@ -27,6 +27,7 @@
 import { Component, Vue, Prop, Emit } from 'vue-property-decorator'
 import GanIcon from '@/packages/GanIcon'
 import GanLink from '@/packages/GanLink'
+import { verifySlot } from '../../../tools/utils'
 
 @Component({
   name: 'GanCard',
@@ -67,8 +68,7 @@ export default class GanCard extends Vue {
    * 判断是否存在该插槽
    */
   get isHaveSlot() {
-    // return (slot: string) => this.$scopedSlots.hasOwnProperty(slot)
-    return false
+    return (slot: string) => verifySlot(this.$scopedSlots, slot)
   }
 }
 </script>
