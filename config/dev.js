@@ -1,6 +1,7 @@
 const public = require('./public')
 
 module.exports = {
+  runtimeCompiler: true,
 	pages: {
 		index: {
 			// page 的入口

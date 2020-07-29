@@ -11,6 +11,7 @@
   </g-button>
   <button @click="taggleMode('ghost')">切换边框</button>
   <button @click="taggleMode('border')">切换边框</button>
+  <g-icon></g-icon>
 </template>
 
 <script lang="ts">

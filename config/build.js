@@ -19,14 +19,17 @@ module.exports = {
     resolve: public.resolve,
   },
   css: {
-    sourceMap: true,
+    sourceMap: false,
     extract: {
       filename: '[name]/style.css',
     },
     loaderOptions: {
-      scss: {
-        prependData: `@import "~@/assets/styles/norm.scss";`
-      }
+			scss: {
+				additionalData: `
+					@import "~@/assets/styles/norm.scss";
+					@import "~@/assets/styles/mixins.scss";
+				`
+			}
     }
   },
   chainWebpack: (config) => {
