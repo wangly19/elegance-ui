@@ -1,0 +1,25 @@
+# 目录
+.DS_Store
+node_modules
+/lib
+/dist
+
+# 环境变量
+.env.local
+.env.*.local
+
+# L
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# 编译器配置文件
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml

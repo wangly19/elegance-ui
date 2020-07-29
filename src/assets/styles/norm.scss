@@ -1,0 +1,60 @@
+// NOTE 实体颜色规范
+$primary-color: #2b90d9;
+$error-color: #ee2560;
+$success-color: #3b8686;
+$warning-color: #e97f02;
+$border-color: #D4DFE6;
+$white-color: #f4f5f9;
+$dark-color: #282c37;
+$sub-color: rgba(0, 0, 0, 0.25);
+
+// NOTE 幽灵颜色规范
+$primary-ghost: #a3daff;
+$error-ghost: #fc9d9a;
+$success-ghost: #a8dba8;
+$warning-ghost: #f9cdad;
+
+// NOTE 边框阴影规范
+$shadow-color: rgba(0, 0, 0, 0.05);
+
+// NOTE 字体大小规范
+$font-1: 12px;
+$font-2: 14px;
+$font-3: 16px;
+$font-4: 18px;
+$font-4: 20px;
+$font-4: 22px;
+
+// NOTE 生产样式
+
+$baseColorList: (
+  primary: #2b90d9,
+  error: #ee2560,
+  success: #3b8686,
+  warning: #e97f02,
+  link: none
+);
+
+$gHostList: (
+  primary: #a3daff,
+  error: #fc9d9a,
+  success: #a8dba8,
+  warning: #f9cdad,
+);
+
+@each $KEY, $COLOR in $baseColorList {
+  .#{$KEY}-bg {
+    background: $COLOR;
+    @if $KEY == 'link' {
+      color: $dark-color;
+    } @else {
+      color: $white-color;
+    }
+  }
+}
+
+@each $KEY, $COLOR in $gHostList {
+  .#{$KEY}-color {
+    color: $COLOR;
+  }
+}

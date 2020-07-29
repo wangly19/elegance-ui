@@ -1,0 +1,29 @@
+// NOTE 工具类
+
+// 基本圆角大小
+@mixin baseRadius($size: 4px) {
+  border-radius: $size;
+}
+
+// NOTE 清除outline样式
+@mixin clearOutLine() {
+  outline: none;
+}
+
+// NOTE 清除边框样式
+@mixin clearBorder() {
+  border: none;
+}
+
+// NOTE 过度时间设置
+@mixin trOpacityTime {
+  transition: all .5s;
+}
+
+// NOTE Flex方法
+@mixin flex($justifyContent: initial, $alignItems: initial, $flexDirection: initial) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+}

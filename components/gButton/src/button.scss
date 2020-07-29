@@ -1,0 +1,61 @@
+// NOTE 按钮大小变量
+$sizeList: (
+  small: 24px,
+  base: 32px,
+  large: 40px
+);
+
+// NOTE 生成按钮大小class
+@each $KEY, $VAL in $sizeList {
+  .g-#{$KEY} {
+    height: $VAL;
+    line-height: $VAL;
+  }
+}
+
+// NOTE 生成边框按钮
+@each $key, $color in $baseColorList {
+  .g-#{$key}-bbd {
+    border: 1px solid $color !important;
+    & > span {
+      color: $color;
+    }
+  }
+}
+
+// NOTE 生成ghost样式
+@each $key, $color in $gHostList {
+  .g-#{$key}-ghost {
+    background: $color;
+    & > span {
+      color: $dark-color;
+    }
+  }
+}
+
+// NOTE 基本按钮样式
+.g-button {
+  @extend .g-base;
+  @include baseRadius();
+  @include clearOutLine();
+  @include clearBorder();
+  @include trOpacityTime();
+  padding: 0 15px;
+  cursor: pointer;
+  &:hover {
+    opacity: .65;
+  }
+  & > span {
+    display: inline-block;
+    @extend .g-base;
+  }
+  &:disabled {
+    background: $border-color;
+    border: none !important;
+    color: $sub-color;
+    cursor: not-allowed !important;
+  }
+  &[radius] {
+    border-radius: 50px !important;
+  }
+}
