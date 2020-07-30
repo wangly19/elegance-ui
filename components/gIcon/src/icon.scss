@@ -1,4 +1,13 @@
-// NOTE attribute mouse 鼠标效果
-.g-icon[mouse] {
-  cursor: pointer;
+.g-icon {
+  font-size: 20px;
+
+  // NOTE 鼠标状态
+  &[mouse] {
+    cursor: pointer;
+  }
+
+  // NOTE 对图标加粗
+  &[bold] {
+    font-weight: bold;
+  }
 }

@@ -1,13 +1,27 @@
 <template>
-  <span class="g-icon icon iconfont icon-arrow-downward"></span>
+  <span :class="['g-icon', 'icon', 'iconfont', 'icon-arrow-downward']"/>
 </template>
 
-<script>
-import { defineComponent, SetupContext } from 'vue';
+<script lang="ts">
+import { defineComponent, computed, ComputedRef } from 'vue';
 
 export default defineComponent({
   name: 'gIcon',
-  setup () {}
+  props: {
+    name: String,
+    custom: String
+  },
+  setup (props) {
+    const className: ComputedRef<Array<String>> = computed((): Array<String> => {
+      const list: Array<String> = ['g-icon', 'icon', 'iconfont', 'icon-arrow-downward']
+      props.name && list.push(props.name as string)
+      props.custom && list.push(props.name as string)
+      return list
+    })
+    return {
+      className
+    }
+  }
 });
 </script>
 
