@@ -1,4 +1,6 @@
 <template>
+<!-- 
+
   <g-button
   v-for="item in typeList" :key=" item"
   :type="item"
@@ -12,7 +14,10 @@
   <button @click="taggleMode('ghost')">切换边框</button>
   <button @click="taggleMode('border')">切换边框</button>
   <g-icon mouse bold
-  name="arrow-downward" :custom="mode"></g-icon>
+  name="icon-arrow-downward" :custom="mode"></g-icon>
+
+-->
+  <g-tabs></g-tabs>
 </template>
 
 <script lang="ts">

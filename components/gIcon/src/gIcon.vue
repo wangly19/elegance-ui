@@ -1,5 +1,5 @@
 <template>
-  <span :class="['g-icon', 'icon', 'iconfont', 'icon-arrow-downward']"/>
+  <span :class="className"/>
 </template>
 
 <script lang="ts">
@@ -13,7 +13,7 @@ export default defineComponent({
   },
   setup (props) {
     const className: ComputedRef<Array<String>> = computed((): Array<String> => {
-      const list: Array<String> = ['g-icon', 'icon', 'iconfont', 'icon-arrow-downward']
+      const list: Array<String> = ['g-icon', 'icon', 'iconfont']
       props.name && list.push(props.name as string)
       props.custom && list.push(props.name as string)
       return list
