@@ -1,15 +1,9 @@
 <template>
-  <div class="g-tabs">
-    <nav class="g-tabs-nav">
-      <div class="nav-scorll-panel">
-        <a href="">111</a>
-        <a href="">111</a>
-        <a href="">111</a>
+  <div class="tabs-list">
+      <div class="tabs-content">
+        <div v-for="item in 4" :key="index">{{item}}</div>
       </div>
-    </nav>
-    <div class="g-tabs-content">
-    11</div>
-  </div>
+ </div>
 </template>
 
 <script lang="ts">

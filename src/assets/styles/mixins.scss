@@ -20,10 +20,19 @@
   transition: all .5s;
 }
 
-// NOTE Flex方法
+// DONE Flex方法
 @mixin flex($justifyContent: initial, $alignItems: initial, $flexDirection: initial) {
   display: flex;
   justify-content: $justifyContent;
   align-items: $alignItems;
   flex-direction: $flexDirection;
+}
+
+// DONE 定位方法
+@mixin position($mod: relative, $top: initial, $right: initial, $bottom: initial, $left: initial) {
+  position: $mod;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }

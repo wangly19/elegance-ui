@@ -1,6 +1,6 @@
 <template>
-  <ul class="g-tabs-panel">
-  </ul>
+  <div class="g-tabs-panel">
+  </div>
 </template>
 
 <script lang="ts">

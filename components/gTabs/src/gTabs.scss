@@ -1,0 +1,28 @@
+.tabs-content {
+  display: flex;
+  div{
+    position: relative;
+    margin: 0 20px;
+    line-height: 40px;
+  }
+  div::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid blue;
+    transition: 0.1s all linear;
+  }
+  div.active{
+    color: blue;
+  }
+  div.active::before{
+    width: 100%;
+    left: 0;
+  }
+  div.active ~ div::before{
+    left: 0;
+  }
+}
