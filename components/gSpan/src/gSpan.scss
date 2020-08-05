@@ -1,0 +1,82 @@
+// DONE 拆分等分，生成响应式类
+$fr: 24;
+@for $share from 1 through $fr {
+  // 分块
+  .g-span-#{ $share } {
+    width: ($share / $fr) * 100%;
+  }
+  // 偏移
+  .g-offset-#{ $share } {
+    margin-left: ($share / $fr) * 100%;
+  }
+}
+
+// TODO XL 模块
+@media (min-width:1920px) {
+  @for $share from 1 through $fr {
+    // 分块
+    .g-span-#{ $share }-xl {
+      width: ($share / $fr) * 100%;
+    }
+    // 偏移
+    .g-offset-#{ $share }-xl {
+      margin-left: ($share / $fr) * 100%;
+    }
+  }
+}
+
+// TODO LG 模块
+@media (min-width:1920px) {
+  @for $share from 1 through $fr {
+    // 分块
+    .g-span-#{ $share }-lg {
+      width: ($share / $fr) * 100%;
+    }
+    // 偏移
+    .g-offset-#{ $share }-lg {
+      margin-left: ($share / $fr) * 100%;
+    }
+  }
+}
+
+// TODO MD 模块
+@media (min-width: 992px) {
+  @for $share from 1 through $fr {
+    // 分块
+    .g-span-#{ $share }-lg {
+      width: ($share / $fr) * 100%;
+    }
+    // 偏移
+    .g-offset-#{ $share }-lg {
+      margin-left: ($share / $fr) * 100%;
+    }
+  }
+}
+
+// TODO SM 模块
+@media (min-width: 760px) {
+  @for $share from 1 through $fr {
+    // 分块
+    .g-span-#{ $share }-lg {
+      width: ($share / $fr) * 100%;
+    }
+    // 偏移
+    .g-offset-#{ $share }-lg {
+      margin-left: ($share / $fr) * 100%;
+    }
+  }
+}
+
+// TODO XS 模块
+@media (max-width: 759px) {
+  @for $share from 1 through $fr {
+    // 分块
+    .g-span-#{ $share }-lg {
+      width: ($share / $fr) * 100%;
+    }
+    // 偏移
+    .g-offset-#{ $share }-lg {
+      margin-left: ($share / $fr) * 100%;
+    }
+  }
+}

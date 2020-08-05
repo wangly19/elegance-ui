@@ -1,10 +1,10 @@
 import { Plugin } from 'vue';
-import Span from './src/gSpan.vue'
+import Row from './src/gRow.vue';
 import { getComponentName } from '@/utils';
 
 const install: Plugin = {
   install (app) {
-    app.component(getComponentName(Span), Span)
+    app.component(getComponentName(Row), Row);
   }
 }
 

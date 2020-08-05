@@ -17,7 +17,14 @@
   name="icon-arrow-downward" :custom="mode"></g-icon>
 
 -->
-  <g-tabs></g-tabs>
+<g-row gutter="30">
+  <g-span span="4" style="background: red;">1</g-span>
+  <g-span span="4">2</g-span>
+  <g-span span="4" style="background: blue;">3</g-span>
+  <g-span span="4">4</g-span>
+  <g-span span="4" style="background: yellow;">4</g-span>
+  <g-span span="4" :mod="{ xl: 4 }">5</g-span>
+</g-row>
 </template>
 
 <script lang="ts">
@@ -43,4 +50,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 </style>
