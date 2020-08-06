@@ -5,8 +5,10 @@ import gIcon from 'components/gIcon';
 import gTbas from 'components/gTabs';
 import gRow from 'components/gRow';
 import gSpan from 'components/gSpan';
+import gInput from 'components/gInput';
 
 createApp(App)
+.use(gInput)
 .use(gButton)
 .use(gIcon)
 .use(gTbas)

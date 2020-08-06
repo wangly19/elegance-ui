@@ -1,3 +1,16 @@
+
+$--sm: 768px !default;
+$--md: 992px !default;
+$--lg: 1200px !default;
+$--xl: 1920px !default;
+
+$breakpoints: (
+  'xs' : (max-width: $--sm - 1),
+  'sm' : (min-width: $--sm),
+  'md' : (min-width: $--md),
+  'lg' : (min-width: $--lg),
+  'xl' : (min-width: $--xl)
+);
 // DONE 拆分等分，生成响应式类
 $fr: 24;
 @for $share from 1 through $fr {
@@ -11,72 +24,14 @@ $fr: 24;
   }
 }
 
-// TODO XL 模块
-@media (min-width:1920px) {
-  @for $share from 1 through $fr {
-    // 分块
-    .g-span-#{ $share }-xl {
-      width: ($share / $fr) * 100%;
-    }
-    // 偏移
-    .g-offset-#{ $share }-xl {
-      margin-left: ($share / $fr) * 100%;
-    }
-  }
+// @wnag 生成scss样式，参考【element scss 实现方案】
+
+@function createPixel($screen) {
+  
 }
 
-// TODO LG 模块
-@media (min-width:1920px) {
-  @for $share from 1 through $fr {
-    // 分块
-    .g-span-#{ $share }-lg {
-      width: ($share / $fr) * 100%;
-    }
-    // 偏移
-    .g-offset-#{ $share }-lg {
-      margin-left: ($share / $fr) * 100%;
-    }
+@each $key, $val in $breakpoints {
+  @media screen {
+    
   }
-}
-
-// TODO MD 模块
-@media (min-width: 992px) {
-  @for $share from 1 through $fr {
-    // 分块
-    .g-span-#{ $share }-lg {
-      width: ($share / $fr) * 100%;
-    }
-    // 偏移
-    .g-offset-#{ $share }-lg {
-      margin-left: ($share / $fr) * 100%;
-    }
-  }
-}
-
-// TODO SM 模块
-@media (min-width: 760px) {
-  @for $share from 1 through $fr {
-    // 分块
-    .g-span-#{ $share }-lg {
-      width: ($share / $fr) * 100%;
-    }
-    // 偏移
-    .g-offset-#{ $share }-lg {
-      margin-left: ($share / $fr) * 100%;
-    }
-  }
-}
-
-// TODO XS 模块
-@media (max-width: 759px) {
-  @for $share from 1 through $fr {
-    // 分块
-    .g-span-#{ $share }-lg {
-      width: ($share / $fr) * 100%;
-    }
-    // 偏移
-    .g-offset-#{ $share }-lg {
-      margin-left: ($share / $fr) * 100%;
-    }
-  }
-}
+};

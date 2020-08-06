@@ -21,8 +21,8 @@
 }
 
 // DONE Flex方法
-@mixin flex($justifyContent: initial, $alignItems: initial, $flexDirection: initial) {
-  display: flex;
+@mixin flex($mod: flex, $justifyContent: initial, $alignItems: initial, $flexDirection: initial) {
+  display: $mod;
   justify-content: $justifyContent;
   align-items: $alignItems;
   flex-direction: $flexDirection;

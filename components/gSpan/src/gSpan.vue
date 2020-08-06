@@ -1,12 +1,12 @@
 <template>
-  <div :class="currentNames" :style="currentStyle">
+  <div :class="[ ...currentNames, ...screenClass ]" :style="currentStyle">
     <slot/>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, toRef, Ref, inject, ref, ComputedRef, toRefs, reactive } from 'vue';
-import { useSpanClass, useSpanStyle } from './hooks';
+import { defineComponent, toRef, Ref, inject, ref, ComputedRef, toRefs, reactive, onUpdated } from 'vue';
+import { useSpanClass, useSpanStyle, useSpanScreen } from './hooks';
 
 export default defineComponent({
   name: 'gSpan',
@@ -20,30 +20,39 @@ export default defineComponent({
       default: 0
     },
     mod: {
-      type: () => ({
-        xl: [String, Number],
-        lg: [String, Number],
-        md: [String, Number],
-        sm: [String, Number],
-        xs: [String, Number]
-      })
+      type: Object,
+      default: {
+          xl: 0,
+          lg: 0,
+          md: 0,
+          xs: 0
+      }
     }
   },
   setup (props) {
+    onUpdated(() => {
+      console.log(props.mod)
+    });
     // 当前份数
     const currentSpan: Ref<string | number | undefined> = toRef(props, 'span');
+
     // 当前偏移份数
     const currentOffset: Ref<string | number | undefined> = toRef(props, 'offset');
+
     // 获取间隔
     const currentGutter: Ref<number | string> = inject<Ref<number | string | undefined>>('gutter') as Ref<number | string>;
+
     // 获取当前屏幕
-    console.log(props.mod)
+    const screenClass: ComputedRef<Array<string>> = useSpanScreen(props.mod)
+
     // 获取当前类
-    const currentNames: ComputedRef<string[]> = useSpanClass(currentSpan, currentOffset);
+    const currentNames: ComputedRef<Array<string>> = useSpanClass(currentSpan, currentOffset);
     const currentStyle = useSpanStyle(currentGutter);
     return {
       currentNames,
-      currentStyle
+      currentStyle,
+      screenClass,
+      mod
     }
   }
 })

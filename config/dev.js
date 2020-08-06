@@ -26,6 +26,12 @@ module.exports = {
 					@import "~@/assets/styles/norm.scss";
 					@import "~@/assets/styles/mixins.scss";
 				`
+			},
+			sass: {
+				additionalData: `
+					@import "~@/assets/styles/norm.scss"
+					@import "~@/assets/styles/mixins.scss"
+				`
 			}
 		}
 	},

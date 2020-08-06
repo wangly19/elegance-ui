@@ -38,3 +38,16 @@ export function useSpanStyle(
   styles.paddingRight = `${Number(gutter.value) / 2}px`
   return styles
 }
+
+export function useSpanScreen(mod: Record<string, any>) {
+  const screenKey: Array<string> = ['xl','lg', 'md', 'xs']
+  return computed((): Array<string> => {
+    const screenClass: Array<string> = []
+    screenKey.forEach((key: string) => {
+      if (Number(mod[key]) !== 0) {
+        screenClass.push(`g-span-${Number(mod[key])}-${key}`)
+      }
+    })
+    return screenClass
+  })
+}
