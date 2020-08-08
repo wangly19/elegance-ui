@@ -6,8 +6,10 @@ import gTbas from 'components/gTabs';
 import gRow from 'components/gRow';
 import gSpan from 'components/gSpan';
 import gInput from 'components/gInput';
+import gMedia from 'components/gMedia';
 
 createApp(App)
+.use(gMedia)
 .use(gInput)
 .use(gButton)
 .use(gIcon)

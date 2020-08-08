@@ -21,8 +21,23 @@
   <g-span :mod="screen" style="background: black">5</g-span>
 </g-row>
 <button @click="taggleScreen">1111</button>
--->
 <g-input clear="11"></g-input>
+<g-button
+  v-for="item in typeList" :key=" item"
+  :type="item"
+  :mode="mode"
+  style="margin: 10px;"
+  radius
+  @click="taggleMode('')"
+  >
+  {{item}}
+  </g-button>
+  
+  <button @click="taggleMode('ghost')">切换边框</button>
+  <button @click="taggleMode('border')">切换边框</button>
+-->
+<g-media></g-media>
+
 </template>
 
 <script lang="ts">

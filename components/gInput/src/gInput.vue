@@ -36,7 +36,6 @@ export default defineComponent({
     placeholder: String
   },
   setup (props, context: SetupContext) {
-    console.log(context)
     return {
       props
     }
