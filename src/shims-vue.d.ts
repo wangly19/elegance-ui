@@ -4,10 +4,9 @@ declare module '*.vue' {
   export default componentOptions;
 }
 
-interface Window{
-  myProp:number;
-}
 
-interface Window{
+declare interface Window{
   Aliplayer: any
 }
+
+type Aliplayer = any

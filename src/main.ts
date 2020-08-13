@@ -7,8 +7,10 @@ import gRow from 'components/gRow';
 import gSpan from 'components/gSpan';
 import gInput from 'components/gInput';
 import gMedia from 'components/gMedia';
+import gChecked from 'components/gChecked';
 
 createApp(App)
+.use(gChecked)
 .use(gMedia)
 .use(gInput)
 .use(gButton)

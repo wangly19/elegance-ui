@@ -1,47 +1,45 @@
 <template>
-  <div :id="mediaID">{{mediaID}}</div>
+  <div :id="soleObject.playerId" />
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, Ref, onMounted } from 'vue';
-import { useCreateAliplayer, useCreateMediaWindow } from './hooks';
+import { defineComponent, ref, Ref, onUpdated, watchEffect, onMounted, watch, reactive } from 'vue';
+import { PlayerProps, useCreateSoleID, SoleConfig, useCreateCSSLink, useCreateScriptTag, useCreatePlayer } from './hooks';
+import { guid2 } from '@/utils'
 
 export default defineComponent({
-  name: 'gMedia',
+  name: 'GMedia',
   props: {
-    linkCDN: {
+    scriptLink: {
       type: String,
-      default: 'https://g.alicdn.com/de/prismplayer/2.8.8/skins/default/aliplayer-min.css'
+      default: 'https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js'
     },
-    scriptCDN: {
+    cssLink: {
       type: String,
-      default: 'https://g.alicdn.com/de/prismplayer/2.8.8/aliplayer-min.js'
-    },
-    config: {
-      type: Object,
-      default: () => ({
-      })
-    },
-    otherConfig: {
-      type: Object,
-      default: () => ({})
+      default: 'https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css'
     }
   },
-  setup (props, context) {
-    // 创建id, 保证每一个播放窗口的实例不是一样的
-    const mediaID: Ref<string> = ref<string>(`g-video-${new Date().getTime()}`);
-    let example: any = null
-    onMounted(() => {
-      // 对状态进行更新
-      useCreateAliplayer(props.scriptCDN, props.linkCDN, () => {
-        // 返回实例
-        example = useCreateMediaWindow(mediaID);
-      });
-      console.log(example)
-    })
+  setup (props) {
+    const loading: Ref<boolean> = ref<boolean>(true);
+    // 静态配置
+    const soleObject: SoleConfig = useCreateSoleID();
+    // 当前对象
+    let currentPlayer: any = reactive({});
+    // 生成css标签
+    useCreateCSSLink(props, soleObject.cssName);
+    // 生成script标签引入
+    useCreateScriptTag(props, soleObject.scriptName, loading, () => {
+      // script加载成功
+      const data = useCreatePlayer(soleObject.playerId);
+      Object.keys(data).forEach(key => {
+        currentPlayer[key] = data[key]
+      })
+      // 产生事件
+      console.log(currentPlayer.getVolume)
+    });
     return {
-      mediaID,
-      example
+      soleObject,
+      currentPlayer
     }
   }
 })
