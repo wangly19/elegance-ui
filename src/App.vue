@@ -39,8 +39,9 @@
 <g-input clear="11"></g-input>
 <g-media ref="player" scriptLink="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js"></g-media>
 <g-input clear="11" v-model="player" placeholder="11111"></g-input>
+<g-checked v-model="active"></g-checked>
 -->
-<g-checked></g-checked>
+<g-message type="error" v-model="active"></g-message>
 </template>
 
 <script lang="ts">
@@ -50,7 +51,6 @@ export default defineComponent({
   name: 'App',
   setup(props) {
     const config = {
-      
           "source": "//player.alicdn.com/video/aliyunmedia.mp4",
           "width": "100%",
           "height": "500px",
@@ -66,6 +66,7 @@ export default defineComponent({
     const screen = reactive({xl: 12, md: 12})
     const mode: Ref<string> = ref<string>('');
     const player: Ref<string> = ref<any>('1111111111111');
+    const active = ref(true)
     onMounted(() => {
       console.log(player.value)
     })
@@ -81,6 +82,7 @@ export default defineComponent({
     return {
       typeList,
       taggleMode,
+      active,
       mode,
       screen,
       taggleScreen,

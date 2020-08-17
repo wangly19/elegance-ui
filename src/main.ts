@@ -8,6 +8,7 @@ import gSpan from 'components/gSpan';
 import gInput from 'components/gInput';
 import gMedia from 'components/gMedia';
 import gChecked from 'components/gChecked';
+import gMessage from 'components/gMessage';
 
 createApp(App)
 .use(gChecked)
@@ -18,4 +19,5 @@ createApp(App)
 .use(gTbas)
 .use(gRow)
 .use(gSpan)
+.use(gMessage)
 .mount('#app')

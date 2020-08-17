@@ -1,7 +1,7 @@
 // NOTE 工具类
 
 // 基本圆角大小
-@mixin baseRadius($size: 4px) {
+@mixin baseRadius($size: 2px) {
   border-radius: $size;
 }
 
