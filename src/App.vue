@@ -40,32 +40,47 @@
 <g-media ref="player" scriptLink="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js"></g-media>
 <g-input clear="11" v-model="player" placeholder="11111"></g-input>
 <g-checked v-model="active"></g-checked>
--->
-<g-message type="error" v-model="active"></g-message>
+  -->
+<g-message type="error" v-model:open="active" :is-close="true" message="no message model value..."></g-message>
 </template>
 
 <script lang="ts">
-import { defineComponent, Ref, ref, reactive, onMounted } from 'vue'
+import {
+  defineComponent,
+  Ref,
+  ref,
+  reactive,
+  onMounted
+} from 'vue'
 
 export default defineComponent({
   name: 'App',
   setup(props) {
     const config = {
-          "source": "//player.alicdn.com/video/aliyunmedia.mp4",
-          "width": "100%",
-          "height": "500px",
-          "autoplay": true,
-          "isLive": true,
-          "rePlay": false,
-          "playsinline": true,
-          "preload": true,
-          "controlBarVisibility": "hover",
-          "useH5Prism": true
+      source: '//player.alicdn.com/video/aliyunmedia.mp4',
+      width: '100%',
+      height: '500px',
+      autoplay: true,
+      isLive: true,
+      rePlay: false,
+      playsinline: true,
+      preload: true,
+      controlBarVisibility: 'hover',
+      useH5Prism: true,
     }
-    const typeList: Array<string> = ['success', 'error', 'warning', 'primary', 'link'];
-    const screen = reactive({xl: 12, md: 12})
-    const mode: Ref<string> = ref<string>('');
-    const player: Ref<string> = ref<any>('1111111111111');
+    const typeList: Array < string > = [
+      'success',
+      'error',
+      'warning',
+      'primary',
+      'link',
+    ]
+    const screen = reactive({
+      xl: 12,
+      md: 12,
+    })
+    const mode: Ref < string > = ref < string > ('')
+    const player: Ref < string > = ref < any > ('1111111111111')
     const active = ref(true)
     onMounted(() => {
       console.log(player.value)
@@ -77,7 +92,7 @@ export default defineComponent({
     }
     const taggleScreen = () => {
       screen.md = 10
-      screen.xl= 6
+      screen.xl = 6
     }
     return {
       typeList,
@@ -87,9 +102,9 @@ export default defineComponent({
       screen,
       taggleScreen,
       player,
-      config
+      config,
     }
-  }
+  },
 })
 </script>
 

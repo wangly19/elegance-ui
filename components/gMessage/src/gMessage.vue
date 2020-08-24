@@ -1,42 +1,48 @@
 <template>
-  <div class="g-message">
-    <Teleport to="#gMessage">
-      <div class="teleport-model-message"
-      v-if="modelValue"
-      :class="[currentTypeClass]"
-      >
-        <p class="text">{{props.message}}</p>
-        <g-icon name="icon-close" class="close-icon" mouse
-        @click="onClose"
-        />
-      </div>
-    </Teleport>
-  </div>
+<div class="g-message">
+  <Teleport to="#gMessage">
+    <div class="teleport-model-message" v-if="open" :class="[currentTypeClass]">
+      <p class="text">{{message}}</p>
+      <g-icon name="icon-close" class="close-icon" mouse v-show="isClose" @click="onClose" />
+    </div>
+  </Teleport>
+</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ComputedRef, onUnmounted, onMounted } from 'vue';
+import {
+  defineComponent,
+  computed,
+  ComputedRef,
+  onUnmounted,
+  onMounted,
+} from 'vue'
 
 export default defineComponent({
   name: 'gMessage',
   props: {
-    modelValue: {
-      type: Boolean
+    open: {
+      type: Boolean,
+      default: true,
     },
     type: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
     time: {
       type: [Number],
-      default: NaN
+      default: NaN,
     },
     message: {
       type: String,
-      default: 'no message model value...'
-    }
+      default: '',
+    },
+    isClose: {
+      type: Boolean,
+      default: true,
+    },
   },
-  setup (props, context) {
+  setup(props, context) {
     let timeor: number
     onMounted(() => {
       if (!isNaN(props.time)) {
@@ -51,18 +57,18 @@ export default defineComponent({
     // 关闭方法
     const onClose = () => {
       context.emit('onClose')
-      context.emit('update:modelValue', false)
+      context.emit('update:open', false)
     }
     // 当前类型class
-    const currentTypeClass: ComputedRef<string> = computed((): string => {
+    const currentTypeClass: ComputedRef < string > = computed((): string => {
       return `${props.type}-bg`
     })
     return {
       currentTypeClass,
       onClose,
-      props
+      props,
     }
-  }
+  },
 })
 </script>
 
@@ -75,11 +81,13 @@ export default defineComponent({
   line-height: 30px;
   text-align: center;
   font-size: 13px;
+
   .text {
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
+
   .close-icon {
     @include position($mod: absolute, $right: 0);
     @include trOpacityTime();
@@ -89,8 +97,9 @@ export default defineComponent({
     height: 30px;
     background: rgba(0, 0, 0, 0.2);
     font-size: 12px;
+
     &:hover {
-    background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2);
     }
   }
 }
